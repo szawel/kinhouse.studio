@@ -9,7 +9,7 @@ import ProjectGallery from '../components/ProjectGallery';
 import ProjectHeader from '../components/ProjectHeader'
 import ProjectPoster from '../components/ProjectPoster';
 import ProjectLaurels from '../components/ProjectLaurels';
-import Synopsis from '../components/Synopsis';
+import ProjectSynopsis from '../components/ProjectSynopsis';
 import { MenuHeightProvider } from '../contexts/MenuHeightContext';
 
 function mapImagesToGatsbyImageData(images) {
@@ -34,7 +34,7 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
   const images = mapImagesToGatsbyImageData(galleryImages);
   const poster = mapImagesToGatsbyImageData(posterImages);
   const laurels = mapImagesToGatsbyImageData(laurelsImages);
-  const synopsisHtml = synopsis?.data?.childMarkdownRemark?.html;
+  // const synopsisHtml = synopsis?.data?.childMarkdownRemark?.html;
 
   return (
     <div>
@@ -54,7 +54,11 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
 
             {images.length > 0 && <ProjectPoster imageData={poster} />}
 
-            <Synopsis htmlContent={synopsisHtml} />
+            {synopsis && synopsis.data &&
+              <ProjectSynopsis htmlContent={synopsis.data.childMarkdownRemark.html} />
+            }
+
+
 
             {images.length > 0 && <ProjectGallery imageData={images} />}
           </div>
