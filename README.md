@@ -4,19 +4,19 @@ Welcome to the official repository for the **Kinhouse Studio Website**. This web
 
 ## Technology Stack
 - **CMS**: `Strapi`
-- **Framework**: `Gatsby`
-- `gatsby-image@3.11.0`
-- `gatsby-plugin-image@3.12.3`
-- `gatsby-plugin-mdx@5.12.3`
-- `gatsby-plugin-react-svg@3.3.0`
-- `gatsby-plugin-sharp@5.12.3`
-- `gatsby-plugin-web-font-loader@1.0.4`
-- `gatsby-remark-images@7.12.3`
-- `gatsby-source-filesystem@5.12.1`
-- `gatsby-source-strapi@3.3.1`
-- `gatsby-transformer-remark@6.12.3`
-- `gatsby-transformer-sharp@5.12.3`
-- `gatsby@5.12.9`
+- **Framework**: `Gatsby` : 
+`gatsby@5.12.9`
+`gatsby-image@3.11.0`
+`gatsby-plugin-image@3.12.3`
+`gatsby-plugin-mdx@5.12.3`
+`gatsby-plugin-react-svg@3.3.0`
+`gatsby-plugin-sharp@5.12.3`
+`gatsby-plugin-web-font-loader@1.0.4`
+`gatsby-remark-images@7.12.3`
+`gatsby-source-filesystem@5.12.1`
+`gatsby-source-strapi@3.3.1`
+`gatsby-transformer-remark@6.12.3`
+`gatsby-transformer-sharp@5.12.3`
 
 
 
@@ -26,3 +26,26 @@ The design of the Kinhouse Studio website is tailored for a specific purpose, re
 ---
 
 **Note**: This repository is intended for development and maintenance of the Kinhouse Studio website. While contributions and suggestions are welcome, please keep in mind the specialized nature of the website's design and structure.
+
+
+## Installation
+Follow these simple steps to get started with the project:
+
+### Prerequisites
+- Ensure you have Node.js and npm</br>
+- Install Gatsby CLI globally using </br>
+- Optionally, install Yarn (alternative to npm).</br>
+```bash
+npm install -g gatsby-cli
+```
+- Clone the Repository:
+- Install Dependencies: Navigate to the project directory and run:
+
+If using Yarn:
+```bash
+yarn install
+```
+If using npm:
+```bash
+npm install
+```
