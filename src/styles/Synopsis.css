@@ -1,16 +1,12 @@
 /* src/components/Synopsis.css */
 
 .synopsis {
-    /* width: calc(100% - 40px); */
-    width: calc(50% - 40px);
-    padding: 20px;
-    border-bottom: var(--primary-line);
+    width: 70%;
     height: auto;
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        padding: 15px;
-        border-bottom: var(--primary-line);
-    }
+    padding: var(--primary-text-padding);
+    border-bottom: var(--primary-line);
+    box-sizing: border-box;
+
 }
 
 p {

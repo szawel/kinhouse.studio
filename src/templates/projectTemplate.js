@@ -1,12 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ProjectBasicInformation from "../components/ProjectBasicInformation"
+import MenuBar from "../components/MenuBar";
 import ContentWrapper from '../components/ContentWrapper';
 import FooterNote from "../components/FooterNote";
-import MenuBar from "../components/MenuBar";
+import ProjectBasicInformation from "../components/ProjectBasicInformation"
+import ProjectProductionInformation from "../components/ProjectProductionInformation"
 import ProjectGallery from '../components/ProjectGallery';
 import ProjectHeader from '../components/ProjectHeader'
 import ProjectPoster from '../components/ProjectPoster';
+import ProjectLaurels from '../components/ProjectLaurels';
 import Synopsis from '../components/Synopsis';
 import { MenuHeightProvider } from '../contexts/MenuHeightContext';
 
@@ -25,11 +27,13 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
     Synopsis: synopsis,
     ProjectGallery: galleryImages,
     Poster: posterImages,
+    Laurels: laurelsImages,
   } = strapiProject;
 
   // Map the ProjectGallery data to an array of gatsbyImageData
   const images = mapImagesToGatsbyImageData(galleryImages);
   const poster = mapImagesToGatsbyImageData(posterImages);
+  const laurels = mapImagesToGatsbyImageData(laurelsImages);
   const synopsisHtml = synopsis?.data?.childMarkdownRemark?.html;
 
   return (
@@ -37,30 +41,23 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
       <MenuHeightProvider>
         <ContentWrapper>
           <MenuBar />
-          <ProjectHeader
-            superscription={Superscription}
-            title={Title}
-            subTitle={SubTitle}
-            headerPhoto={HeaderPhoto}
-          />
+          <ProjectHeader superscription={Superscription} title={Title} subTitle={SubTitle} headerPhoto={HeaderPhoto} />
+          {images.length > 0 && <ProjectLaurels imageData={laurels} />}
 
           <div className="container">
             {basicInfo && basicInfo.data &&
               <ProjectBasicInformation htmlContent={basicInfo.data.childMarkdownRemark.html} />
             }
             {productionStructure && productionStructure.data &&
-              <ProjectBasicInformation htmlContent={productionStructure.data.childMarkdownRemark.html} />
+              <ProjectProductionInformation htmlContent={productionStructure.data.childMarkdownRemark.html} />
             }
+
+            {images.length > 0 && <ProjectPoster imageData={poster} />}
+
+            <Synopsis htmlContent={synopsisHtml} />
+
+            {images.length > 0 && <ProjectGallery imageData={images} />}
           </div>
-          
-          <div className="container">
-
-          {images.length > 0 && <ProjectPoster imageData={poster} />}
-
-          <Synopsis htmlContent={synopsisHtml} />
-          </div>
-
-          {images.length > 0 && <ProjectGallery imageData={images} />}
 
         </ContentWrapper>
       </MenuHeightProvider>
@@ -117,6 +114,13 @@ export const query = graphql`
           }
         }
         Poster {
+          localFile{
+            childImageSharp{
+              gatsbyImageData
+            }
+          }
+        }
+        Laurels{
           localFile{
             childImageSharp{
               gatsbyImageData

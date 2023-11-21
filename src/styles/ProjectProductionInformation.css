@@ -1,16 +1,12 @@
-.basic-information-wrapper {
+.production-information-wrapper {
     width: 50%;
     padding: var(--primary-text-padding);
     border-bottom: var(--primary-line);
-    border-right: var(--primary-line);
     box-sizing: border-box;
 
-    /* width: 33%; */
-
-    /* border-right: var(--primary-line); */
-    @media screen and (max-width: 768px) {
+    /* @media screen and (max-width: 768px) {
         width: 100%;
         padding: 15px;
         border-bottom: var(--primary-line);
-    }
+    } */
 }

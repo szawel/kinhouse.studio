@@ -6,11 +6,9 @@ import '../styles/Synopsis.css';
 
 const Synopsis = ({ htmlContent }) => {
     return (
-        // <div className='synopsis-wrapper'>
             <div className="synopsis">
                 <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
             </div>
-        // </div>
     );
 };
 
