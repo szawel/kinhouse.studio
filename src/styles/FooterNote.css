@@ -1,0 +1,15 @@
+.footer-note {
+    height: calc(var(--primary-hight) * 2);
+    width: 100%;
+    /* border-bottom: var(--primary-line); */
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-bg-color);
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size-small);
+    color: var(--primary-font-color);
+    font-weight: var(--primary-font-weight-normal);
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}

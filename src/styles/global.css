@@ -1,0 +1,54 @@
+:root {
+  --primary-bg-color: #000;
+  --primary-line: 2px solid #00F;
+
+  --primary-font: "bc-novatica-cyr";
+  --primary-font-color: #00F;
+  --primary-font-size-small: 12pt;
+  --primary-font-size-medium: 16pt;
+  --primary-font-size-large: 36pt;
+
+  --primary-font-weight-normal: 200;
+  --primary-font-weight-bold: 500;
+
+  --primary-hight: 70px;
+  --primary-gallery-hight: calc(var(--primary-hight)*5);
+  --primary-margin: 30px;
+  --primary-gallery-margin: 30px;
+  --primary-border-radius: 15px;
+}
+
+body {
+
+  margin: 0px;
+  background-color: var(--primary-bg-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    position: none;
+    display: none;
+    justify-content: none;
+    overflow: none;
+  }
+}

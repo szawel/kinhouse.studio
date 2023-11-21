@@ -1,0 +1,101 @@
+/* Shared styles for all menu bars */
+.menu-bar,
+.dropdown-bar,
+.secondary-dropdown-bar {
+    width: 100%;
+    height: var(--primary-hight);
+    background-color: var(--primary-bg-color);
+    position: fixed;
+    left: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: var(--primary-line);
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size-medium);
+    color: var(--primary-font-color);
+    font-weight: var(--primary-font-weight-normal);
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+/* Main menu bar styles */
+.menu-bar {
+    top: 0;
+    z-index: 1000;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Styles for individual menu items */
+.menu-item {
+    padding: 10px 10px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.menu-item:first-child {
+    margin-left: 20px;
+}
+
+.menu-item:last-child {
+    margin-right: 20px;
+}
+
+.menu-item img {
+    width: 30px;
+    height: auto;
+}
+
+/* Dropdown bar styles */
+.dropdown-bar,
+.secondary-dropdown-bar {
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dropdown-bar {
+    top: var(--primary-hight);
+    z-index: 999;
+}
+
+.secondary-dropdown-bar {
+    top: calc(var(--primary-hight) * 2);
+    z-index: 998;
+}
+
+/* Active dropdown item styles */
+.dropdown-item.active,
+.menu-item.active,
+.menu-item:hover,
+.dropdown-item:hover,
+.menu-item.bold,
+.dropdown-item.bold {
+    font-weight: var(--primary-font-weight-bold);
+}
+
+/* General dropdown item styles */
+.dropdown-item {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Active state for dropdowns */
+.dropdown-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Specific style for bold items */
+.menu-item.bold,
+.dropdown-item.bold {
+    background-color: var(--primary-bg-color);
+}
+
+.dropdown-item-wrapper {
+    display: flex;
+    width: calc(var(--primary-hight) * 2);
+    justify-content: center;
+    align-items: center;
+}

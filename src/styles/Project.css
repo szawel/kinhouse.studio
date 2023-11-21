@@ -1,0 +1,34 @@
+/* Project.module.css */
+.projectContainer {
+    display: flex;
+    align-items: center;
+    height: var(--primary-hight);
+    width: calc(100% - 20px);
+    background-color: var(--primary-bg-color);
+    border-bottom: var(--primary-line);
+    margin-left: auto;
+    margin-right: 0;
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size-medium);
+    color: var(--primary-font-color);
+    font-weight: var(--primary-font-weight-normal);
+    
+
+}
+
+.id, .title, .categories {
+    text-align: left;
+}
+
+.id {
+    width: 20%;
+
+}
+
+.title {
+    width: 40%;
+}
+
+.categories {
+    width: 20%;
+}

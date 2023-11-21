@@ -1,0 +1,50 @@
+/* ProjectHeader.css */
+.project-header-wrapper {
+    width: 100%;
+    /* height: var(--primary-gallery-hight); */
+    border-bottom: var(--primary-line);
+}
+
+.project-header {
+    height: calc(var(--primary-gallery-hight) * 2); /* Reduced by 20px */
+    width: calc(100% - var(--primary-margin) * 2); /* Reduced by 20px */
+    margin: var(--primary-margin);
+    border-radius: var(--primary-border-radius);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    text-align: center;
+    color: white;
+    /* Adjust text color as needed */
+}
+
+.Title{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--primary-font);
+    font-size: calc(var(--primary-font-size-large) * 2);
+    color: var(--primary-font-color);
+    font-weight: 700;
+    line-height:1em;
+}
+
+.SubTitle{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--primary-font);
+    font-size: calc(var(--primary-font-size-medium)*2);
+    color: var(--primary-font-color);
+}
+
+.Superscription{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--primary-font);
+    font-size: calc(var(--primary-font-size-small)*2);
+    color: var(--primary-font-color);
+}

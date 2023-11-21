@@ -1,0 +1,38 @@
+.gallery {
+    width: 100%;
+    border-bottom: var(--primary-line);
+}
+
+.galleryWrapper {
+    height: var(--primary-gallery-hight); /* Reduced by 20px */
+    width: calc(100% - var(--primary-margin) * 2); /* Reduced by 20px */
+    margin: var(--primary-margin);
+    border-radius: var(--primary-border-radius);
+    background-color: var(--primary-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.galleryImage {
+    width: 100%;
+    height: 100%; /* Fill the entire container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 5.0s ease; /* Smooth transition for the fade effect */
+    object-fit: cover; /* Ensure the image covers the whole area */
+    object-position: center; /* Center the image */
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.fadeOut {
+    opacity: 0;
+}

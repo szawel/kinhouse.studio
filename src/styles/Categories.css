@@ -1,0 +1,34 @@
+.categories-container {
+  height: calc(var(--primary-hight) * 2);
+  width: 100%;
+  border-bottom: var(--primary-line);
+  display: flex;
+  align-items: center;
+  /* padding-left: 32px; */
+  background-color: var(--primary-bg-color);
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size-large);
+  color: var(--primary-font-color);
+  font-weight: var(--primary-font-weight-normal);
+  font-style: normal;
+  box-sizing: border-box;
+
+}
+
+.categories-container p {
+  margin: 0;
+  background-color: var(--primary-bg-color);
+}
+
+.categories-wrapper {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.categories-text {
+  background-color: var(--primary-bg-color);
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size-large);
+  color: var(--primary-font-color);
+
+}
