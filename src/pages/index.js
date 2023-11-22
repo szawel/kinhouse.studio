@@ -3,7 +3,6 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import slugify from "slugify"; // Make sure you have slugify installed
 
-
 import MenuBar from "../components/MenuBar";
 import Categories from '../components/Categories';
 import ContentWrapper from '../components/ContentWrapper';
@@ -74,11 +73,11 @@ const IndexPage = () => {
             </Link>
           ))}
           <div id="abount"></div>
-          <Categories text="Abount us"/>
+          <Categories text="Abount us" />
           <div id="media"></div>
-          <Categories text="Media"/>
+          <Categories text="Media" />
           <div id="contact"></div>
-          <Categories text="Contact"/>
+          <Categories text="Contact" />
         </ContentWrapper>
       </MenuHeightProvider>
       <FooterNote />

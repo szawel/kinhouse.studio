@@ -2,33 +2,49 @@
 .projectContainer {
     display: flex;
     align-items: center;
-    height: var(--primary-hight);
+    justify-content: start; /* Align items from the start */
+    height: var(--primary-height); /* Ensure this is enough to accommodate the animation */
     width: calc(100% - 20px);
     background-color: var(--primary-bg-color);
     border-bottom: var(--primary-line);
     margin-left: auto;
-    margin-right: 0;
+
     font-family: var(--primary-font);
     font-size: var(--primary-font-size-medium);
     color: var(--primary-font-color);
     font-weight: var(--primary-font-weight-normal);
-    
+    position: relative;
+    transition: 1s;
+}
 
+.projectContainer:hover{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 1s;
 }
 
 .id, .title, .categories {
     text-align: left;
+    flex-grow: 1; /* Allow flexible growth to utilize available space */
+}
+
+
+.animationContainer {
+    /* background-color: red; */
 }
 
 .id {
-    width: 20%;
-
+    width: 5%;
 }
 
 .title {
-    width: 40%;
+    width: 5%;
 }
 
 .categories {
-    width: 20%;
+    width: 5%;
+}
+
+Lottie{
+    width: 5%;
 }

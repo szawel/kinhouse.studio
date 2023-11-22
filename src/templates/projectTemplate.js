@@ -34,7 +34,6 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
   const images = mapImagesToGatsbyImageData(galleryImages);
   const poster = mapImagesToGatsbyImageData(posterImages);
   const laurels = mapImagesToGatsbyImageData(laurelsImages);
-  // const synopsisHtml = synopsis?.data?.childMarkdownRemark?.html;
 
   return (
     <div>
