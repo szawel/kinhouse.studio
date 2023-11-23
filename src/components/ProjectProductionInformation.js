@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react';
 
 import "../styles/ProjectProductionInformation.css"
 
-const ProjectProductionInformation = ({ htmlContent }) => {
+const ProjectProductionInformation = ({ productionStructure }) => {
+  const htmlContent = productionStructure && productionStructure.data 
+  ? productionStructure.data.childMarkdownRemark.html 
+  : '';
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   useEffect(() => {

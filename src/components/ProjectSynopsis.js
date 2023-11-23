@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react';
 
 import "../styles/ProjectSynopsis.css"
 
-const ProjectSynopsis = ({ htmlContent }) => {
+const ProjectSynopsis = ({ synopsis }) => {
+  const htmlContent = synopsis && synopsis.data 
+  ? synopsis.data.childMarkdownRemark.html 
+  : '';
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   useEffect(() => {

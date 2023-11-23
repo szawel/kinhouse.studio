@@ -41,25 +41,14 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
         <ContentWrapper>
           <MenuBar />
           <ProjectHeader superscription={Superscription} title={Title} subTitle={SubTitle} headerPhoto={HeaderPhoto} />
-          {images.length > 0 && <ProjectLaurels imageData={laurels} />}
+          <ProjectLaurels imageData={laurels} />
 
           <div className="container">
-            {basicInfo && basicInfo.data &&
-              <ProjectBasicInformation htmlContent={basicInfo.data.childMarkdownRemark.html} />
-            }
-            {productionStructure && productionStructure.data &&
-              <ProjectProductionInformation htmlContent={productionStructure.data.childMarkdownRemark.html} />
-            }
-
-            {images.length > 0 && <ProjectPoster imageData={poster} />}
-
-            {synopsis && synopsis.data &&
-              <ProjectSynopsis htmlContent={synopsis.data.childMarkdownRemark.html} />
-            }
-
-
-
-            {images.length > 0 && <ProjectGallery imageData={images} />}
+            <ProjectBasicInformation basicInfo={basicInfo} />
+            <ProjectProductionInformation productionStructure={productionStructure} />
+            <ProjectPoster imageData={poster} />
+            <ProjectSynopsis synopsis={synopsis} />
+            <ProjectGallery imageData={images} />
           </div>
 
         </ContentWrapper>
