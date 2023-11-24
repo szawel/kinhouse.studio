@@ -13,3 +13,7 @@
     text-align: center;
     box-sizing: border-box;
 }
+
+.logotyp{
+    width: calc(var(--primary-hight) * 2);
+}
