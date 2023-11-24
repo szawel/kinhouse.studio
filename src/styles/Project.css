@@ -1,14 +1,6 @@
 /* Project.module.css */
 .projectContainer {
     display: flex;
-    align-items: center;
-    justify-content: start; /* Align items from the start */
-    height: var(--primary-height); /* Ensure this is enough to accommodate the animation */
-    width: calc(100% - 20px);
-    background-color: var(--primary-bg-color);
-    border-bottom: var(--primary-line);
-    margin-left: auto;
-
     font-family: var(--primary-font);
     font-size: var(--primary-font-size-medium);
     color: var(--primary-font-color);
@@ -17,15 +9,37 @@
     transition: 1s;
 }
 
-.projectContainer:hover{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.projectContainerDot {
+    width: calc(var(--primary-margin));
+    transform: translateX(-5px);
+}
+
+.projectContainerText {
+    border-bottom: var(--primary-line);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: var(--primary-height);
+    /* Ensure this is enough to accommodate the animation */
+    width: 100%;
+    background-color: var(--primary-bg-color);
+    margin-left: auto;
+    transition: 1s;
+
+
+}
+
+.projectContainerText:hover {
+    padding-left: 25px;
     transition: 1s;
 }
 
-.id, .title, .categories {
+.id,
+.title,
+.categories {
     text-align: left;
-    flex-grow: 1; /* Allow flexible growth to utilize available space */
+    flex-grow: 1;
+    /* Allow flexible growth to utilize available space */
 }
 
 
@@ -34,17 +48,16 @@
 }
 
 .id {
-    width: 5%;
+    /* width: 5%; */
+    max-width: 150px;
 }
 
 .title {
-    width: 5%;
+    max-width: 300px;
+    /* width: 5%; */
 }
 
 .categories {
-    width: 5%;
-}
-
-Lottie{
-    width: 5%;
+    max-width: 150px;
+    /* width: 5%; */
 }

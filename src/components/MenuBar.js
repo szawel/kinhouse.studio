@@ -1,15 +1,11 @@
 //import React, { useState } from 'react';
 import { Link, navigate } from 'gatsby';
-import MenuIcon from '../matz/menu-icon.svg'; // Adjust the path as needed
 
 import Menu01 from '../matz/menu.01.svg'; // Adjust the path as necessary
 import Menu02 from '../matz/menu.02.svg'; // Adjust the path as necessary
 
-
-import React, { useEffect, useState } from 'react';
-import { useMenuHeight } from '../contexts/MenuHeightContext';
-
-import "../styles/global.css"
+import React, { useState } from 'react';
+// import "../styles/global.css"
 
 const MenuBar = () => {
     const [isPrimaryDropdownOpen, setIsPrimaryDropdownOpen] = useState(false);
@@ -21,18 +17,6 @@ const MenuBar = () => {
             setOpenSecondaryDropdown(null); // Close secondary dropdown when primary is closed
         }
     };
-
-    const { updateMenuHeight } = useMenuHeight();
-
-    useEffect(() => {
-        const baseHeight = 70;
-
-        let height = baseHeight; // Use baseHeight from CSS variable
-        if (isPrimaryDropdownOpen) height += baseHeight;
-        if (openSecondaryDropdown) height += baseHeight;
-        updateMenuHeight(height);
-
-    }, [isPrimaryDropdownOpen, openSecondaryDropdown]);
 
     const navigateToSection = (section, yOffset = -100) => { // Default Y-offset set to -100
         if (window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html') {
@@ -51,14 +35,13 @@ const MenuBar = () => {
     };
 
     return (
-        <div>
+        <div >
             <div className="menu-bar">
                 <Link to="/" className="menu-item">kinhouse</Link>
                 <div onClick={togglePrimaryDropdown} className={`menu-item ${isPrimaryDropdownOpen ? 'active' : ''}`}>
                     <img src={isPrimaryDropdownOpen ? Menu01 : Menu02} alt="Menu" />
                 </div>
             </div>
-
 
             <div className={`dropdown-bar ${isPrimaryDropdownOpen ? 'dropdown-active' : ''}`}>
                 <div className="dropdown-item-wrapper">

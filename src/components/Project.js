@@ -52,16 +52,17 @@ const Project = ({ id, title, categories }) => {
 
   return (
     <div className='projectContainer'
-      // onMouseOver={handleMouseEnter}
-      // onMouseOut={handleMouseLeave}>
       onMouseOver={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
-      <div className='id'>{id}</div>
-      <Lottie options={defaultOptions} height={70} width={70} isStopped={animationState.isStopped} direction={animationState.direction}/>
-      <div className='title'>{title}</div>
-      <Lottie options={defaultOptions} height={70} width={70} isStopped={animationState.isStopped} direction={animationState.direction}/>
-      <div className='categories'>{categories}</div>
-      <Lottie options={defaultOptions} height={70} width={70} isStopped={animationState.isStopped} direction={animationState.direction}/>
+        <div className='projectContainerDot'>
+      <Lottie options={defaultOptions} height={70} width={70} isStopped={animationState.isStopped} direction={animationState.direction} />
+
+        </div>
+      <div className='projectContainerText'>
+        <div className='id'>{id}</div>
+        <div className='title'>{title}</div>
+        <div className='categories'>{categories}</div>
+      </div>
     </div>
   );
 };

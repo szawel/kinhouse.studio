@@ -4,6 +4,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import slugify from "slugify"; // Make sure you have slugify installed
 
 import MenuBar from "../components/MenuBar";
+import Menu from "../components/Menu";
 import Categories from '../components/Categories';
 import ContentWrapper from '../components/ContentWrapper';
 import Gallery from "../components/Gallery";
@@ -45,41 +46,43 @@ const IndexPage = () => {
 
 
   return (
-    <div>
-      <MenuHeightProvider>
-        <MenuBar />
-        <ContentWrapper>
-          <Gallery imagesData={data.strapiMain.IntroGalery} />
-          <div id="movies"></div>
-          <Categories text="Movies" id="movies" />
-          {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Movie")).map((project, index) => (
-            <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
-              <Project id={project.Year} title={project.Title} categories={project.Genre} />
-            </Link>
-          ))}
+    <div id="index">
+      <Menu/>
 
-          <div id="animation"></div>
-          <Categories text="Animation" id="animation" />
-          {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Animation")).map((project, index) => (
-            <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
-              <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
-            </Link>
-          ))}
+      {/* <MenuBar /> */}
 
-          <Categories text="Immersive" id="immersive" />
-          {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Immersive")).map((project, index) => (
-            <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
-              <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
-            </Link>
-          ))}
-          <div id="abount"></div>
-          <Categories text="Abount us" />
-          <div id="media"></div>
-          <Categories text="Media" />
-          <div id="contact"></div>
-          <Categories text="Contact" />
-        </ContentWrapper>
-      </MenuHeightProvider>
+      <Gallery imagesData={data.strapiMain.IntroGalery} />
+      <div id="movies"></div>
+      <Categories text="Movies" id="movies" />
+      {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Movie")).map((project, index) => (
+        <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
+          <Project id={project.Year} title={project.Title} categories={project.Genre} />
+        </Link>
+      ))}
+
+      <div id="animation"></div>
+      <Categories text="Animation" id="animation" />
+      {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Animation")).map((project, index) => (
+        <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
+          <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
+        </Link>
+      ))}
+
+      <div id="immersive"></div>
+      <Categories text="Immersive" id="immersive" />
+      {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Immersive")).map((project, index) => (
+        <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
+          <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
+        </Link>
+      ))}
+      <div id="abount"></div>
+      <Categories text="Abount us" />
+      <div id="media"></div>
+      <Categories text="Media" />
+      <div id="contact"></div>
+      <Categories text="Contact" />
+
+
       <FooterNote />
     </div>
   );

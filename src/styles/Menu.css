@@ -1,0 +1,63 @@
+/* ../styles/Menu.css */
+.menu-container {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  border-bottom: var(--primary-line);
+  box-sizing: border-box;
+  border-bottom: var(--primary-line);
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size-medium);
+  color: var(--primary-font-color);
+  font-weight: var(--primary-font-weight-normal);
+  font-style: normal;
+}
+
+.menu-logo {
+  height: var(--primary-hight);
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+
+.menu-button {
+  align-items: center;
+  cursor: pointer;
+  width: calc(var(--primary-hight) / 2);
+  padding-right: 23px;
+  position: absolute;
+  right: 0;
+}
+
+.menu-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 70px;
+  margin-left: auto; /* Pushes the element to the right */
+  opacity: 0;
+  visibility: hidden;
+  margin-right: 75px;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.menu-options.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.option-button {
+  display: flex;
+  margin-left: 35px;
+  margin-right: 35px;
+  cursor: pointer;
+
+}
+
+.vertical-line {
+  height: 2px;
+  width: 2px;
+  background-color: #00f; /* or any color you prefer */
+}

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import MenuBar from "../components/MenuBar";
+import Menu from "../components/Menu";
 import ContentWrapper from '../components/ContentWrapper';
 import FooterNote from "../components/FooterNote";
 import ProjectBasicInformation from "../components/ProjectBasicInformation"
@@ -37,22 +37,19 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
 
   return (
     <div>
-      <MenuHeightProvider>
-        <ContentWrapper>
-          <MenuBar />
-          <ProjectHeader superscription={Superscription} title={Title} subTitle={SubTitle} headerPhoto={HeaderPhoto} />
-          <ProjectLaurels imageData={laurels} />
+      <Menu />
 
-          <div className="container">
-            <ProjectBasicInformation basicInfo={basicInfo} />
-            <ProjectProductionInformation productionStructure={productionStructure} />
-            <ProjectPoster imageData={poster} />
-            <ProjectSynopsis synopsis={synopsis} />
-            <ProjectGallery imageData={images} />
-          </div>
+      <ProjectHeader superscription={Superscription} title={Title} subTitle={SubTitle} headerPhoto={HeaderPhoto} />
+      <ProjectLaurels imageData={laurels} />
 
-        </ContentWrapper>
-      </MenuHeightProvider>
+      <div className="container">
+        <ProjectBasicInformation basicInfo={basicInfo} />
+        <ProjectProductionInformation productionStructure={productionStructure} />
+        <ProjectPoster imageData={poster} />
+        <ProjectSynopsis synopsis={synopsis} />
+        <ProjectGallery imageData={images} />
+      </div>
+
       <FooterNote />
     </div>
   );
