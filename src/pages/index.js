@@ -3,15 +3,11 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import slugify from "slugify"; // Make sure you have slugify installed
 
-import MenuBar from "../components/MenuBar";
 import Menu from "../components/Menu";
 import Categories from '../components/Categories';
-import ContentWrapper from '../components/ContentWrapper';
 import Gallery from "../components/Gallery";
 import Project from "../components/Project";
 import FooterNote from "../components/FooterNote";
-
-import { MenuHeightProvider } from '../contexts/MenuHeightContext';
 
 import "../styles/MenuBar.css";
 import "../styles/Categories.css";
