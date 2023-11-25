@@ -13,7 +13,7 @@ const Menu = () => {
   });
 
   const toggleLogoAnimation = () => {
-    setIsLogoAnimated(true);
+    setIsLogoAnimated(prevState => !prevState);
   };
 
   const toggleMenu = () => {
@@ -31,8 +31,15 @@ const Menu = () => {
     animationData: logoAnimation,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
-    }
+    },
+    eventListeners: [
+      {
+        eventName: 'complete',
+        callback: () => setIsLogoAnimated(false),
+      },
+    ],
   };
+
 
   const menuOptions = {
     loop: false,
@@ -45,22 +52,22 @@ const Menu = () => {
 
   const navigateToSection = (section, yOffset = -100) => { // Default Y-offset set to -100
     if (window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html') {
-        const sectionElement = document.getElementById(section);
-        if (sectionElement) {
-            const y = sectionElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        }
+      const sectionElement = document.getElementById(section);
+      if (sectionElement) {
+        const y = sectionElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     } else {
-        navigate(`/#${section}`);
+      navigate(`/#${section}`);
     }
-};
+  };
 
   return (
     <div className="menu-container">
-      <div onClick={() => navigateToSection('index', 0) && toggleLogoAnimation } className="menu-logo">
+      <div onClick={toggleLogoAnimation} className="menu-logo">
         <Lottie options={logoOptions}
-                isStopped={!isLogoAnimated}
-                isPaused={false}
+          isStopped={!isLogoAnimated}
+          isPaused={false}
         />
       </div>
       <div className={`menu-options ${isOpen ? 'show' : ''}`}>
@@ -75,9 +82,9 @@ const Menu = () => {
       </div>
       <div onClick={toggleMenu} className="menu-button">
         <Lottie options={menuOptions}
-                isStopped={animationState.isStopped}
-                isPaused={animationState.isPaused}
-                direction={animationState.direction}
+          isStopped={animationState.isStopped}
+          isPaused={animationState.isPaused}
+          direction={animationState.direction}
         />
       </div>
     </div>

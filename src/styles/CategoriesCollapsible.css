@@ -10,7 +10,6 @@
     font-style: normal;
     box-sizing: border-box;
     cursor: pointer;
-    /* background-color: red; */
 
 }
 
@@ -24,7 +23,6 @@
     width: 100%;
     min-height: calc(var(--primary-hight) * 2);
     border-bottom: var(--primary-line);
-    /* background-color: green; */
 }
 
 .categories-collapsible-text {
@@ -62,8 +60,8 @@
 
 }
 
+/* Importent max-height is from element in component CategoriesCollapsible */
 .collapsible-content.open {
     width: 100%;
-    /* max-height: 140px; */
     transition: max-height 0.5s ease-in-out;
 }
