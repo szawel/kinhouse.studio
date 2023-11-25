@@ -5,12 +5,13 @@ import slugify from "slugify"; // Make sure you have slugify installed
 
 import Menu from "../components/Menu";
 import Categories from '../components/Categories';
+import CategoriesCollapsible from '../components/CategoriesCollapsible';
 import Gallery from "../components/Gallery";
 import Project from "../components/Project";
 import FooterNote from "../components/FooterNote";
 
-import "../styles/MenuBar.css";
-import "../styles/Categories.css";
+// import "../styles/MenuBar.css";
+// import "../styles/Categories.css";
 import "../styles/global.css";
 
 const IndexPage = () => {
@@ -43,34 +44,39 @@ const IndexPage = () => {
 
   return (
     <div id="index">
-      <Menu/>
+      <Menu />
 
       {/* <MenuBar /> */}
 
       <Gallery imagesData={data.strapiMain.IntroGalery} />
       <div id="movies"></div>
-      <Categories text="Movies" id="movies" />
+      {/* <Categories text="Movies" /> */}
+
+      <CategoriesCollapsible text="Movies">
       {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Movie")).map((project, index) => (
         <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
           <Project id={project.Year} title={project.Title} categories={project.Genre} />
         </Link>
       ))}
+      </CategoriesCollapsible>
 
       <div id="animation"></div>
-      <Categories text="Animation" id="animation" />
+      <CategoriesCollapsible text="Animation">
       {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Animation")).map((project, index) => (
         <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
           <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
         </Link>
       ))}
+      </CategoriesCollapsible>
 
       <div id="immersive"></div>
-      <Categories text="Immersive" id="immersive" />
+      <CategoriesCollapsible text="Immersive">
       {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Immersive")).map((project, index) => (
         <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
           <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
         </Link>
       ))}
+      </CategoriesCollapsible>
       <div id="abount"></div>
       <Categories text="Abount us" />
       <div id="media"></div>
