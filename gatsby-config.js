@@ -12,7 +12,6 @@ const strapiConfig = {
   accessToken: process.env.STRAPI_TOKEN,
   collectionTypes: ["project"],
   singleTypes: ["portfolio", "main"],
-  // Custom headers for fetching remote files, e.g., CDN files with security
   remoteFileHeaders: {
     Referer: "https://your-site-domain/",
   },

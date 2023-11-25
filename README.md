@@ -1,51 +1,47 @@
-# Kinhouse Studio Website
+<img src="./src/matz/Logo_horizonta.svg">
 
-Welcome to the official repository for the **Kinhouse Studio Website**. This website is uniquely crafted to showcase the essence and vision of Kinhouse Studio, a creative space where innovation meets design.
-
-## Technology Stack
-- **CMS**: `Strapi`
-- **Framework**: `Gatsby` : 
-`gatsby@5.12.9`
-`gatsby-image@3.11.0`
-`gatsby-plugin-image@3.12.3`
-`gatsby-plugin-mdx@5.12.3`
-`gatsby-plugin-react-svg@3.3.0`
-`gatsby-plugin-sharp@5.12.3`
-`gatsby-plugin-web-font-loader@1.0.4`
-`gatsby-remark-images@7.12.3`
-`gatsby-source-filesystem@5.12.1`
-`gatsby-source-strapi@3.3.1`
-`gatsby-transformer-remark@6.12.3`
-`gatsby-transformer-sharp@5.12.3`
-
-
+# Kinhouse Studio - Website
+### Welcome to the official repository for the **Kinhouse Studio Website**. This website is uniquely crafted to showcase the essence and vision of Kinhouse Studio, a creative space where innovation meets design.
 
 ## Design and Customization
 The design of the Kinhouse Studio website is tailored for a specific purpose, reflecting the unique brand and style of Kinhouse Studio. It's important to note that due to its bespoke design and architecture, the website is not straightforward to modify or repurpose for other projects. This design choice ensures a unique and consistent user experience that aligns closely with the Kinhouse Studio's brand identity.
 
----
+> **Note**: This repository is intended for development and maintenance of the Kinhouse Studio website. While contributions and suggestions are welcome, please keep in mind the specialized nature of the website's design and structure.
 
-**Note**: This repository is intended for development and maintenance of the Kinhouse Studio website. While contributions and suggestions are welcome, please keep in mind the specialized nature of the website's design and structure.
-
+## Technology Stack
+- **CMS**: `Strapi 4` `pm2`
+- **Framework**: `Gatsby 5`
 
 ## Installation
-Follow these simple steps to get started with the project:
+Follow these simple steps to get started with the Gatbsy project:
 
-### Prerequisites
-- Ensure you have Node.js and npm</br>
-- Install Gatsby CLI globally using </br>
-- Optionally, install Yarn (alternative to npm).</br>
+### Prerequisites:
+1. Install `Node.js LTS` and `npm@latest` or `yarn@latest`</br>
+2. Install `Gatsby => 5.12.4`
+3. Clone the Repository and navigate to the project directory
 ```bash
-npm install -g gatsby-cli
+git clone git@github.com:szawel/kinhouse.studio.git
+cd kinhouse.studio
 ```
-- Clone the Repository:
-- Install Dependencies: Navigate to the project directory and run:
-
-If using Yarn:
+4. Install Dependencies and run gastby develop
 ```bash
 yarn install
+yarn add react-lottie
+yarn develop
 ```
-If using npm:
+
+## PM2
+ Production process manager for Node.js applications, like `Strapi`, run on server.
 ```bash
-npm install
+# Instalation
+npm install pm2 -g
+
+# Listing Running Applications
+pm2 list
+
+# Monitoring Applications
+pm2 monit
+
+# To update PM2 to the latest version, you can use
+npm install pm2@latest -g
 ```
