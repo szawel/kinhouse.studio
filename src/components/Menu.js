@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, navigate } from 'gatsby';
 import Lottie from 'react-lottie';
-import logoAnimation from '../matz/Logotyp.json';
+import logoAnimation from '../matz/Logotyp.3.json';
 import menuAnimation from '../matz/menu.01.json';
 import '../styles/Menu.css';
 
@@ -64,19 +64,18 @@ const Menu = () => {
 
   return (
     <div className="menu-container">
-      <div onClick={toggleLogoAnimation} className="menu-logo">
+      <Link to="/" onClick={toggleLogoAnimation} className="menu-logo">
         <Lottie options={logoOptions}
           isStopped={!isLogoAnimated}
           isPaused={false}
         />
-      </div>
+      </Link>
       <div className={`menu-options ${isOpen ? 'show' : ''}`}>
         <div onClick={() => navigateToSection('movies', 0)} className="option-button">Movies</div>
         <div onClick={() => navigateToSection('animation', 0)} className="option-button">Animation</div>
         <div onClick={() => navigateToSection('immersive', 0)} className="option-button">Immersive</div>
         <div className="vertical-line"></div>
-        <div onClick={() => navigateToSection('immersive', 0)} className="option-button">Studio</div>
-        <div className="option-button">Contact</div>
+        <div onClick={() => navigateToSection('studio', 0)} className="option-button">About us</div>
         <div className="vertical-line"></div>
         <div className="option-button">Doc</div>
       </div>

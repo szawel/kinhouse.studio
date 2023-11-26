@@ -1,0 +1,15 @@
+/* IntroDescription.css */
+.intro-description {
+    width: calc(100% - 140px);
+    padding: 70px;
+    height: auto;
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size-large);
+    color: var(--primary-font-color);
+    font-weight: var(--primary-font-weight-normal);
+    font-style: normal;
+    border-bottom: var(--primary-line);
+      /* Add more styling as needed */
+  }
+  

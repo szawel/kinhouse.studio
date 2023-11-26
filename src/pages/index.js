@@ -9,15 +9,16 @@ import CategoriesCollapsible from '../components/CategoriesCollapsible';
 import Gallery from "../components/Gallery";
 import Project from "../components/Project";
 import FooterNote from "../components/FooterNote";
+import IntroDescription from '../components/IntroDescription';
+import IntroTeam from '../components/IntroTeam';
 
-// import "../styles/MenuBar.css";
-// import "../styles/Categories.css";
+
 import "../styles/global.css";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
   query {
-    allStrapiProject(sort: {fields: Categories}) {
+    allStrapiProject(sort: {Categories: ASC}) {
       nodes {
         Name
         Title
@@ -37,20 +38,50 @@ const IndexPage = () => {
           }
         }
       }
+      IntroDescription{
+        data {
+          childMarkdownRemark{
+            html
+            rawMarkdownBody
+          }
+        }
+      }
+    }
+    allStrapiTeam {
+      nodes {
+        Name
+        Position
+        Email
+        Bio {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Photo {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
     }
   }
   `)
+
+  const introDescriptionMarkdown = data.strapiMain.IntroDescription.data.childMarkdownRemark.rawMarkdownBody;
+  const teamData = data.allStrapiTeam.nodes;
+
 
 
   return (
     <div id="index">
       <Menu />
 
-      {/* <MenuBar /> */}
-
       <Gallery imagesData={data.strapiMain.IntroGalery} />
       <div id="movies"></div>
-      {/* <Categories text="Movies" /> */}
 
       <CategoriesCollapsible text="Movies">
       {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Movie")).map((project, index) => (
@@ -77,13 +108,11 @@ const IndexPage = () => {
         </Link>
       ))}
       </CategoriesCollapsible>
-      <div id="abount"></div>
-      <Categories text="Abount us" />
-      <div id="media"></div>
-      <Categories text="Media" />
-      <div id="contact"></div>
-      <Categories text="Contact" />
-
+      <div id="studio"></div>
+      <Categories text="About us" />
+      <IntroDescription markdownData={introDescriptionMarkdown} />
+      {/* <Categories text="Get in touch" /> */}
+      <IntroTeam teamData={teamData} />
 
       <FooterNote />
     </div>

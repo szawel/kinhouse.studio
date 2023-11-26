@@ -1,21 +1,7 @@
-import React, { useState, useCallback } from 'react';
-import animationData from '../matz/dot.01.json'; // Update this path
+import React from 'react';
 import '../styles/Project.css';
 
 const Project = ({ id, title, categories }) => {
-  const [animationState, setAnimationState] = useState({
-  });
-
-
-
-  const defaultOptions = {
-    loop: false,
-    autoplay: false,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
 
   return (
     <div className='projectContainer'>

@@ -1,5 +1,5 @@
 //ProjectProductionInformation.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import "../styles/ProjectProductionInformation.css"
 
@@ -7,16 +7,6 @@ const ProjectProductionInformation = ({ productionStructure }) => {
   const htmlContent = productionStructure && productionStructure.data 
   ? productionStructure.data.childMarkdownRemark.html 
   : '';
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div className="production-information-wrapper">

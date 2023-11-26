@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Menu from "../components/Menu";
-import ContentWrapper from '../components/ContentWrapper';
 import FooterNote from "../components/FooterNote";
 import ProjectBasicInformation from "../components/ProjectBasicInformation"
 import ProjectProductionInformation from "../components/ProjectProductionInformation"
@@ -10,7 +9,6 @@ import ProjectHeader from '../components/ProjectHeader'
 import ProjectPoster from '../components/ProjectPoster';
 import ProjectLaurels from '../components/ProjectLaurels';
 import ProjectSynopsis from '../components/ProjectSynopsis';
-import { MenuHeightProvider } from '../contexts/MenuHeightContext';
 
 function mapImagesToGatsbyImageData(images) {
   return images ? images.map(image => image.localFile.childImageSharp.gatsbyImageData) : [];

@@ -10,7 +10,7 @@ require("dotenv").config({
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
-  collectionTypes: ["project"],
+  collectionTypes: ["project", "team"],
   singleTypes: ["portfolio", "main"],
   remoteFileHeaders: {
     Referer: "https://your-site-domain/",
