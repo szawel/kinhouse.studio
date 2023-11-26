@@ -12,7 +12,12 @@ const CategoriesCollapsible = ({ text, children }) => {
         setIsOpen(!isOpen);
         if (contentRef.current) {
             setMaxHeight(isOpen ? 0 : contentRef.current.scrollHeight);
-            console.log(setMaxHeight);
+        }
+    };
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            toggleOpen();
         }
     };
 
@@ -26,12 +31,12 @@ const CategoriesCollapsible = ({ text, children }) => {
     const containerClassText = isOpen ? "collapsible-content open" : "collapsible-content";
 
     return (
-        <div className="categories-collapsible-container" onClick={toggleOpen}>
+        <div className="categories-collapsible-container" onClick={toggleOpen} onKeyDown={handleKeyPress} tabIndex="0" role="button" aria-label="Toggle category">
             <div className="categories-collapsible-wrapper">
                 <div className='categories-collapsible-text'>{text}</div>
-                <img src={CloseIcon} alt="Close" className={containerClass} onClick={toggleOpen} />
+                <img src={CloseIcon} alt="Close" className={containerClass} />
             </div>
-            <div ref={contentRef} className={containerClassText} onClick={toggleOpen} style={{ maxHeight: `${maxHeight}px` }} >
+            <div ref={contentRef} className={containerClassText} style={{ maxHeight: `${maxHeight}px` }} >
                 {children}
             </div>
         </div>

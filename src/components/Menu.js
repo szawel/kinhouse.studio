@@ -1,54 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, navigate } from 'gatsby';
-import Lottie from 'react-lottie';
-import logoAnimation from '../matz/Logotyp.3.json';
+import Lottie from 'react-lottie-player';
 import menuAnimation from '../matz/menu.01.json';
+import logoAnimation from '../matz/Logotyp.3.json';
 import '../styles/Menu.css';
 
 const Menu = () => {
   const [isLogoAnimated, setIsLogoAnimated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [animationState, setAnimationState] = useState({
-    isStopped: true, isPaused: false, direction: 1,
-  });
+  const [isMenuAnimated, setIsMenuAnimated] = useState(false);
+
+  // Calculate menu animation duration
+  const frameRate = menuAnimation.fr;
+  const totalFrames = menuAnimation.op - menuAnimation.ip;
+  const menuAnimationDuration = (totalFrames / frameRate) * 1000;
+
+  const logoframeRate = logoAnimation.fr;
+  const logototalFrames = logoAnimation.op - logoAnimation.ip;
+  const logoAnimationDuration = (logototalFrames / logoframeRate) * 1000;
+  
 
   const toggleLogoAnimation = () => {
-    setIsLogoAnimated(prevState => !prevState);
+    setIsLogoAnimated(true);
   };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    setAnimationState({
-      ...animationState,
-      isStopped: false,
-      direction: isOpen ? -1 : 1,
-    });
+    setIsMenuAnimated(true);
   };
 
-  const logoOptions = {
-    loop: false,
-    autoplay: false,
-    animationData: logoAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    },
-    eventListeners: [
-      {
-        eventName: 'complete',
-        callback: () => setIsLogoAnimated(false),
-      },
-    ],
-  };
-
-
-  const menuOptions = {
-    loop: false,
-    autoplay: false,
-    animationData: menuAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
+  useEffect(() => {
+    let logoTimer;
+    if (isLogoAnimated) {
+      logoTimer = setTimeout(() => {
+        setIsLogoAnimated(false);
+      }, logoAnimationDuration);
     }
-  };
+    return () => clearTimeout(logoTimer);
+  }, [isLogoAnimated, logoAnimationDuration]);
+
+  useEffect(() => {
+    let menuTimer;
+    if (isMenuAnimated) {
+      menuTimer = setTimeout(() => {
+        setIsMenuAnimated(false);
+      }, menuAnimationDuration);
+    }
+    return () => clearTimeout(menuTimer);
+  }, [isMenuAnimated, menuAnimationDuration]);
 
   const navigateToSection = (section, yOffset = -100) => { // Default Y-offset set to -100
     if (window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html') {
@@ -72,9 +71,10 @@ const Menu = () => {
   return (
     <div className="menu-container">
       <Link to="/" onClick={toggleLogoAnimation} className="menu-logo">
-        <Lottie options={logoOptions}
-          isStopped={!isLogoAnimated}
-          isPaused={false}
+        <Lottie
+          animationData={logoAnimation}
+          play={isLogoAnimated}
+          style={{ width: '100%', height: '100%' }}
         />
       </Link>
       <div className={`menu-options ${isOpen ? 'show' : ''}`}>
@@ -114,14 +114,15 @@ const Menu = () => {
         tabIndex="0"
         role="button"
         aria-label="Toggle menu"
-        onClick={toggleMenu} 
+        onClick={toggleMenu}
         onKeyPress={(e) => handleKeyPress(e, 'menu-button')}
         className="menu-button">
         <Lottie
-          options={menuOptions}
-          isStopped={animationState.isStopped}
-          isPaused={animationState.isPaused}
-          direction={animationState.direction}
+          animationData={menuAnimation}
+          play={isMenuAnimated}
+          style={{ width: '100%', height: '100%' }}
+          direction={isOpen ? 1 : -1}
+          goTo={isMenuAnimated ? 0 : null} // Reset to start or leave as is
         />
       </div>
     </div>

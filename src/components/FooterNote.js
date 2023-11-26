@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import Lottie from 'react-lottie';
-import "../styles/FooterNote.css"
+import React, { useState, useEffect } from 'react';
+import Lottie from 'react-lottie-player';
+import "../styles/FooterNote.css";
 import logoAnimation from '../matz/Logo.Verical.02.json';
 
 const FooterNote = () => {
     const [isLogoAnimated, setIsLogoAnimated] = useState(false);
 
+    const frameRate = logoAnimation.fr;
+    const totalFrames = logoAnimation.op - logoAnimation.ip;
+    const logoAnimationDuration = (totalFrames / frameRate) * 1000;
+  
+
     const toggleLogoAnimation = () => {
-        setIsLogoAnimated(prevState => !prevState);
+        setIsLogoAnimated(true);
     };
 
     const handleKeyDown = (event) => {
@@ -16,20 +21,15 @@ const FooterNote = () => {
         }
     };
 
-    const logoOptions = {
-        loop: false,
-        autoplay: true, 
-        animationData: logoAnimation,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        },
-        eventListeners: [
-            {
-                eventName: 'complete',
-                callback: () => setIsLogoAnimated(false),
-            },
-        ],
-    };
+    useEffect(() => {
+        let logoTimer;
+        if (isLogoAnimated) {
+            logoTimer = setTimeout(() => {
+                setIsLogoAnimated(false);
+            }, logoAnimationDuration);
+        }
+        return () => clearTimeout(logoTimer);
+    }, [isLogoAnimated, logoAnimationDuration]);
 
     return (
         <div className='footer-note'>
@@ -41,9 +41,12 @@ const FooterNote = () => {
                 aria-label="Toggle logo animation" // Add an aria-label here
                 className="logotyp"
             >
-                <Lottie options={logoOptions}
-                    isStopped={!isLogoAnimated}
-                    isPaused={false}
+                <Lottie
+                    animationData={logoAnimation}
+                    play={isLogoAnimated}
+                    style={{ width: '100%', height: '100%' }}
+                // loop={false}
+                // onComplete={() => setIsLogoAnimated(false)}
                 />
             </div>
         </div>
