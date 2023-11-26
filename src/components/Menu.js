@@ -62,6 +62,13 @@ const Menu = () => {
     }
   };
 
+  // Add a keyboard event handler
+  const handleKeyPress = (event, section, yOffset = 0) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      navigateToSection(section, yOffset);
+    }
+  };
+
   return (
     <div className="menu-container">
       <Link to="/" onClick={toggleLogoAnimation} className="menu-logo">
@@ -71,16 +78,47 @@ const Menu = () => {
         />
       </Link>
       <div className={`menu-options ${isOpen ? 'show' : ''}`}>
-        <div onClick={() => navigateToSection('movies', 0)} className="option-button">Movies</div>
-        <div onClick={() => navigateToSection('animation', 0)} className="option-button">Animation</div>
-        <div onClick={() => navigateToSection('immersive', 0)} className="option-button">Immersive</div>
+        <div
+          tabIndex="0"
+          role="button"
+          onClick={() => navigateToSection('movies', 0)}
+          onKeyPress={(e) => handleKeyPress(e, 'movies')}
+          className="option-button">Movies
+        </div>
+        <div
+          tabIndex="0"
+          role="button"
+          onClick={() => navigateToSection('animation', 0)}
+          onKeyPress={(e) => handleKeyPress(e, 'animation')}
+          className="option-button">Animation
+        </div>
+        <div
+          tabIndex="0"
+          role="button"
+          onClick={() => navigateToSection('immersive', 0)}
+          onKeyPress={(e) => handleKeyPress(e, 'immersive')}
+          className="option-button">Immersive
+        </div>
         <div className="vertical-line"></div>
-        <div onClick={() => navigateToSection('studio', 0)} className="option-button">About us</div>
+        <div
+          tabIndex="0"
+          role="button"
+          onClick={() => navigateToSection('studio', 0)}
+          onKeyPress={(e) => handleKeyPress(e, 'studio')}
+          className="option-button">About us
+        </div>
         <div className="vertical-line"></div>
         <div className="option-button">Doc</div>
       </div>
-      <div onClick={toggleMenu} className="menu-button">
-        <Lottie options={menuOptions}
+      <div
+        tabIndex="0"
+        role="button"
+        aria-label="Toggle menu"
+        onClick={toggleMenu} 
+        onKeyPress={(e) => handleKeyPress(e, 'menu-button')}
+        className="menu-button">
+        <Lottie
+          options={menuOptions}
           isStopped={animationState.isStopped}
           isPaused={animationState.isPaused}
           direction={animationState.direction}
