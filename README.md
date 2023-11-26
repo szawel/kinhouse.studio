@@ -26,7 +26,6 @@ cd kinhouse.studio
 4. Install Dependencies and run gastby develop
 ```bash
 yarn install
-yarn add react-lottie
 yarn develop
 ```
 
