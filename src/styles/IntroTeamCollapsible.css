@@ -1,0 +1,132 @@
+/* IntroTeam.css */
+.team-collapsible-container {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    border-bottom: var(--primary-line);
+    background-size: 10px 10px;
+    background-image:
+        radial-gradient(circle, #00F 1px, transparent 1px),
+        radial-gradient(circle, #00F 1px, transparent 1px);
+    background-position: 0 0, 5px 5px;
+
+}
+
+.team-collapsible-member-card {
+    width: 50%;
+    max-height: 200px;
+    background-color: var(--primary-bg-color);
+
+    display: inline-flex;
+    overflow: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    border-bottom: var(--primary-line);
+    /* border-right: var(--primary-line); */
+    /* border-left: var(--primary-line); */
+
+
+    transition: max-height 0.5s ease-in-out;
+    box-sizing: border-box;
+
+}
+
+.team-collapsible-member-card+.team-collapsible-member-card {
+    border-left: var(--primary-line);
+}
+
+.team-collapsible-member-card.open+.team-collapsible-member-card {
+    border-left: var(--primary-line);
+}
+
+.team-collapsible-member-card:not(:last-child) {
+    border-right: var(--primary-line);
+    /* Adds a border to the left of the second and subsequent cards */
+}
+
+.team-collapsible-member-card.open {
+    max-height: calc(200px + 500px);
+    transition: max-height 0.5s ease-in-out;
+
+}
+
+.team-member-photo {
+    height: calc(100% - var(--primary-margin) * 2);
+    margin: var(--primary-margin);
+    border-radius: var(--primary-border-radius);
+}
+
+.team-collapsible-member-info {
+    width: 43%;
+    text-align: left;
+    padding: 30px;
+}
+
+.team-collapsible-member-description {
+    width: 70%;
+
+    overflow: hidden;
+    height: 0px;
+    margin-left: 30px;
+
+    transition: height 0.5s ease-in-out;
+
+}
+
+.team-collapsible-member-description.open {
+    height: calc(var(--primary-hight) * 4);
+
+    transition: height 0.5s ease-in-out;
+
+
+}
+
+.team-collapsible-member {
+    font-family: var(--primary-font);
+    font-size: calc(var(--primary-font-size-large));
+    color: var(--primary-font-color);
+}
+
+.team-collapsible-member-position {
+    margin-top: 10px;
+    font-family: var(--primary-font);
+    font-size: calc(var(--primary-font-size-medium));
+    color: var(--primary-font-color);
+}
+
+.team-collapsible-member-email {
+    margin-top: 10px;
+    font-family: var(--primary-font);
+    font-size: calc(var(--primary-font-size-medium));
+    color: var(--primary-font-color);
+
+}
+
+.team-member-bio {
+    width: 100%;
+    padding-top: 0px;
+    font-family: var(--primary-font);
+    font-size: calc(var(--primary-font-size-medium));
+    color: var(--primary-font-color);
+    line-height: 1.5;
+    /* background-color: orange; */
+}
+
+.close-collapsible-icon {
+    margin: 45px var(--primary-margin) 0 auto;
+    height: 50px;
+    transform-origin: center;
+    transform: rotateY(0deg) rotate(45deg);
+    /* Removed duplicate transform */
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+
+}
+
+.close-collapsible-icon.open {
+    transform: rotateY(0deg) rotate(-180deg);
+    cursor: pointer;
+
+}

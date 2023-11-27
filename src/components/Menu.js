@@ -14,7 +14,8 @@ const Menu = () => {
   const frameRate = menuAnimation.fr;
   const totalFrames = menuAnimation.op - menuAnimation.ip;
   const menuAnimationDuration = (totalFrames / frameRate) * 1000;
-
+  
+  // Calculate logo animation duration
   const logoframeRate = logoAnimation.fr;
   const logototalFrames = logoAnimation.op - logoAnimation.ip;
   const logoAnimationDuration = (logototalFrames / logoframeRate) * 1000;
@@ -49,25 +50,28 @@ const Menu = () => {
     return () => clearTimeout(menuTimer);
   }, [isMenuAnimated, menuAnimationDuration]);
 
-  const navigateToSection = (section, yOffset = -100) => { // Default Y-offset set to -100
+  const navigateToSection = (section, yOffset = -150) => {
     if (window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html') {
       const sectionElement = document.getElementById(section);
       if (sectionElement) {
-        const y = sectionElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        // Wait for the next event loop tick to ensure all elements are rendered correctly
+        setTimeout(() => {
+          const y = sectionElement.getBoundingClientRect().top + window.pageYOffset + -70;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 0);
       }
     } else {
       navigate(`/#${section}`);
     }
   };
-
+  
   // Add a keyboard event handler
-  const handleKeyPress = (event, section, yOffset = 0) => {
+  const handleKeyPress = (event, section, yOffset = -150) => {
     if (event.key === 'Enter' || event.key === ' ') {
       navigateToSection(section, yOffset);
     }
   };
-
+  
   return (
     <div className="menu-container">
       <Link to="/" onClick={toggleLogoAnimation} className="menu-logo">

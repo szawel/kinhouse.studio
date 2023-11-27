@@ -2,18 +2,14 @@
 .team-container {
     width: 100%;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     box-sizing: border-box;
 }
 
 .team-member-card {
     height: calc(var(--primary-hight) * 7);
-    width: 60%;
-    /* width: 100%; */
+    width: 50%;
     display: flex;
-    /* align-items: center; */
-    color: #fff;
     overflow: hidden;
     border-bottom: var(--primary-line);
     border-right: var(--primary-line);
@@ -28,16 +24,14 @@
 .team-member-info {
     width: 80%;
     text-align: left;
+    padding: 30px;
+    /* border-left: var(--primary-line); */
 }
 
 .team-member {
-    margin-top: 20px;
-    padding-top: 0;
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-large));
     color: var(--primary-font-color);
-
-    /* background-color: blue; */
 }
 
 .team-member-position {
@@ -45,8 +39,6 @@
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-medium));
     color: var(--primary-font-color);
-    /* background-color: pink; */
-
 }
 
 .team-member-email {
@@ -54,7 +46,6 @@
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-medium));
     color: var(--primary-font-color);
-    /* background-color: purple; */
 
 }
 

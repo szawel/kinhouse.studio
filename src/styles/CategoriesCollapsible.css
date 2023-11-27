@@ -7,15 +7,8 @@
     font-size: var(--primary-font-size-large);
     color: var(--primary-font-color);
     font-weight: var(--primary-font-weight-normal);
-    font-style: normal;
     box-sizing: border-box;
     cursor: pointer;
-
-}
-
-.categories-container p {
-    margin: 0;
-    background-color: var(--primary-bg-color);
 }
 
 .categories-collapsible-wrapper {
@@ -25,43 +18,38 @@
     border-bottom: var(--primary-line);
 }
 
-.categories-collapsible-text {
-    width: 50%;
-    padding-left: 30px;
-    padding-top: 40px;
+.categories-collapsible-text,
+.categories-container p {
     background-color: var(--primary-bg-color);
     font-family: var(--primary-font);
     font-size: var(--primary-font-size-large);
     color: var(--primary-font-color);
+    padding-left: var(--primary-margin);
+    /* Adjust as needed, assuming padding is universal */
+}
 
+.categories-collapsible-text {
+    width: 50%;
+    padding-top: 35px;
 }
 
 .close-icon {
-    margin-right: 25px;
-    margin-top: 45px;
+    margin: 45px var(--primary-margin) 0 auto;
     height: 50px;
-    margin-left: auto;
     transform-origin: center;
-    transform: rotateY(0deg) rotate(0deg);
-    transition: transform 1s ease-in-out;
     transform: rotateY(0deg) rotate(45deg);
+    /* Removed duplicate transform */
+    transition: transform 1s ease-in-out;
 }
 
 .close-icon.open {
     transform: rotateY(0deg) rotate(-180deg);
 }
 
-
-.collapsible-content {
+.collapsible-content,
+.collapsible-content.open {
     width: 100%;
     overflow: hidden;
     max-height: 0px;
-    transition: max-height 0.5s ease-in-out;
-
-}
-
-/* Importent max-height is from element in component CategoriesCollapsible */
-.collapsible-content.open {
-    width: 100%;
     transition: max-height 0.5s ease-in-out;
 }

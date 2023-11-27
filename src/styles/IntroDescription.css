@@ -1,15 +1,19 @@
 /* IntroDescription.css */
 .intro-description {
-    width: calc(100% - 140px);
-    padding: 70px;
-    height: auto;
+    width: calc(100% - var(--primary-hight) * 2);
+    padding-left: var(--primary-hight);
+    padding-right: var(--primary-hight);
+
+    height: calc(var(--primary-hight) * 7);
+    display: flex;
     text-align: center;
+    align-items: center;
+
     font-family: var(--primary-font);
     font-size: var(--primary-font-size-large);
     color: var(--primary-font-color);
     font-weight: var(--primary-font-weight-normal);
     font-style: normal;
     border-bottom: var(--primary-line);
-      /* Add more styling as needed */
   }
   
