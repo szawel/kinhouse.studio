@@ -1,6 +1,11 @@
 .project-trailer {
     width: 50%;
-    max-height: calc(500px * 7);
+    height: auto;
+
+    margin: 0px;
+    padding: 0px;
+
+    /* min-height: calc(70px * 7); */
     overflow: hidden;
     background-color: var(--primary-bg-color);
 
@@ -12,6 +17,9 @@
 }
 
 iframe {
-    height: calc(500px - 30px);
-    padding: 15px;
+
+    background-color: var(--primary-bg-color);
+    width: 100%;
+    height: auto;
+    min-height: calc(70px * 7);
 }

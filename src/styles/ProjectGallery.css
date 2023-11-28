@@ -1,37 +1,24 @@
 /* src/components/ProjectGallery.css */
 .projectGalleryContainer {
+    margin: 0px;
+    padding: 0px;
     width: 70%;
-    height: auto;
-    overflow: hidden;
     outline: var(--primary-outline);
+    overflow: hidden;
     box-sizing: border-box;
 }
 
 .projectGalleryImage {
+    height: 700px;
     width: calc(100% - var(--primary-margin) * 2);
-    /* height: calc(100% - var(--primary-margin) * 2); */
     margin: var(--primary-margin);
-
     transition: opacity 3.0s ease;
-    /* Smooth transition for the fade effect */
 
-    overflow: hidden;
     border-radius: var(--primary-border-radius);
     object-position: center;
-    /* Center the image */
-
-
-
-    height: auto;
-    /* width: auto; */
-    /* max-height: 500px; */
-    width: calc(100% - var(--primary-margin) * 2);
 }
 
-.slick-slider {
-    background-color: var(--primary-bg-color);
-    outline: var(--primary-outline);
-    box-sizing: border-box;
+.slick-list {
+    background-color: black;
 
-    /* border-right: var(--primary-line); */
 }

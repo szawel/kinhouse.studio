@@ -10,5 +10,6 @@
 .synopsis-information{
     padding-left: var(--primary-margin);
     padding-right: var(--primary-margin);
+    padding-bottom: calc(var(--primary-margin) / 2);
     box-sizing: border-box;
 }
