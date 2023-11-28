@@ -2,8 +2,11 @@ import React from "react";
 import "../styles/ProjectTrailer.css"; // Importing the CSS file
 
 const ProjectTrailer = ({ trailer }) => {
+
+  const hasData = trailer;
   // Ensure the trailer prop is available
-  if (!trailer) {
+  if (!hasData) {
+    console.log("no Trailer")
     return null;
   }
 

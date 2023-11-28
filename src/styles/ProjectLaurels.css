@@ -18,7 +18,8 @@
 .ProjectLaurelsImage {
     width: calc(var(--primary-hight) * 3);
     object-fit: contain;
-    margin-right: 10px;
+    margin: 30px;
+    /* margin-right: 10px; */
 }
 
 /* Add this to remove margin from the last image */

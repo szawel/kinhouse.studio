@@ -1,31 +1,26 @@
 /* src/components/ProjectPoster.css */
 .projectPosterContainer {
     width: 30%;
-    height: auto;
-    border-bottom: var(--primary-line);
-    border-right: var(--primary-line);
     overflow: hidden;
+    
+    outline: var(--primary-outline);
+    /* border: solid 5px #00f; */
     box-sizing: border-box;
-    background-color: var(--primary-bg-color);
-
-
-    @media screen {
-        /* height: auto; */
-    }
+    
+    
 }
 
 .projectPosterImage {
     width: calc(100% - var(--primary-margin) * 2);
     height: calc(100% - var(--primary-margin) * 2);
     margin: var(--primary-margin);
-
+    box-sizing: border-box;
+    
     transition: opacity 3.0s ease;
-    /* Smooth transition for the fade effect */
-
+    background-color: var(--primary-bg-color);
     overflow: hidden;
+    
     border-radius: var(--primary-border-radius);
     object-position: center;
-    /* Center the image */
-
-    @media screen {}
+    
 }

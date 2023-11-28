@@ -2,10 +2,11 @@
   /* General veriables */
   --primary-bg-color: #000;
   --primary-fg-color: #00F;
-  --primary-fg-color: #fff;
+  /* --primary-fg-color: #fff; */
   --primary-hight: 70px;
   --primary-margin: 30px;
   --primary-line: 1px solid var(--primary-fg-color);
+  --primary-outline: 1px solid var(--primary-fg-color);
 
   /* Text options */
   --primary-font: "bc-novatica-cyr";
@@ -18,7 +19,7 @@
 
 
   /* Galery */
-  --primary-gallery-hight: calc(var(--primary-hight)*5);
+  --primary-gallery-hight: calc(var(--primary-hight)*7);
   --primary-gallery-margin: 30px;
   --primary-border-radius: 15px;
 
@@ -89,7 +90,6 @@ p {
 
 .container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   justify-content: center;
   background-size: 10px 10px;
@@ -98,7 +98,6 @@ p {
     radial-gradient(circle, var(--primary-fg-color) 1px, transparent 1px);
   background-position: 0 0, 5px 5px;
   /* border-bottom: var(--primary-line); */
-
 }
 
 .container:after {

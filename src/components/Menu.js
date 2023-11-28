@@ -107,8 +107,8 @@ const Menu = () => {
         <div
           tabIndex="0"
           role="button"
-          onClick={() => navigateToSection('studio', 0)}
-          onKeyPress={(e) => handleKeyPress(e, 'studio')}
+          onClick={() => navigateToSection('about us', 0)}
+          onKeyPress={(e) => handleKeyPress(e, 'about us')}
           className="option-button">About us
         </div>
         <div className="vertical-line"></div>

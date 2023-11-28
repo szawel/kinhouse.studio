@@ -1,17 +1,9 @@
 .basic-information-wrapper {
     width: 50%;
     padding: var(--primary-text-padding);
-    border-bottom: var(--primary-line);
-    border-right: var(--primary-line);
-    box-sizing: border-box;
     background-color: var(--primary-bg-color);
 
-    /* width: 33%; */
+    outline: var(--primary-outline);
 
-    /* border-right: var(--primary-line); */
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        padding: 15px;
-        border-bottom: var(--primary-line);
-    }
+    box-sizing: border-box;
 }

@@ -9,7 +9,7 @@ import CategoriesCollapsible from '../components/CategoriesCollapsible';
 import Gallery from "../components/Gallery";
 import Project from "../components/Project";
 import IntroDescription from '../components/IntroDescription';
-import IntroTeam from '../components/IntroTeam';
+// import IntroTeam from '../components/IntroTeam';
 import IntroTeamCollapsible from '../components/IntroTeamCollapsible';
 import FooterNote from "../components/FooterNote";
 
@@ -110,10 +110,11 @@ const IndexPage = () => {
           </Link>
         ))}
       </CategoriesCollapsible>
-      <div className="space" id="studio">
+      <div className="space">
 
       </div>
 
+      <div id="about us"></div>
       <Categories text="About us" />
       <IntroDescription markdownData={introDescriptionMarkdown} />
 
