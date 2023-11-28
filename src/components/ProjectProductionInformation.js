@@ -4,9 +4,16 @@ import React from 'react';
 import "../styles/ProjectProductionInformation.css"
 
 const ProjectProductionInformation = ({ productionStructure }) => {
-  const htmlContent = productionStructure && productionStructure.data 
-  ? productionStructure.data.childMarkdownRemark.html 
-  : '';
+  // Check if the Production Information data is present
+  const hasData = productionStructure && productionStructure.data && productionStructure.data.childMarkdownRemark && productionStructure.data.childMarkdownRemark.html;
+
+  // If no data, do not render the component
+  if (!hasData) {
+    return null;
+  }
+
+// Extract the HTML content
+  const htmlContent = productionStructure.data.childMarkdownRemark.html;
 
   return (
     <div className="production-information-wrapper">

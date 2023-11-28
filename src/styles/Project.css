@@ -14,7 +14,7 @@
     .dot {
         width: 15px;
         height: 15px;
-        background-color: #00f;
+        background-color: var(--primary-fg-color);
         border-radius: 30px;
         transform: translateX(5px);
         transition: 1s;

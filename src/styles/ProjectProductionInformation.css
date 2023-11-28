@@ -3,7 +3,7 @@
     padding: var(--primary-text-padding);
     border-bottom: var(--primary-line);
     box-sizing: border-box;
-
+    background-color: var(--primary-bg-color)
     /* @media screen and (max-width: 768px) {
         width: 100%;
         padding: 15px;

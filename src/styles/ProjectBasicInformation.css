@@ -4,6 +4,7 @@
     border-bottom: var(--primary-line);
     border-right: var(--primary-line);
     box-sizing: border-box;
+    background-color: var(--primary-bg-color);
 
     /* width: 33%; */
 

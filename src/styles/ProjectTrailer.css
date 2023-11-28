@@ -1,0 +1,16 @@
+.project-trailer {
+    width: 50%;
+    max-height: calc(500px * 7);
+    overflow: hidden;
+    border-bottom: var(--primary-line);
+    border-right: var(--primary-line);
+    display: flex;
+    box-sizing: border-box;
+    background-color: var(--primary-bg-color)
+}
+
+iframe {
+    height: calc(500px - 30px);
+    padding: 15px;
+    /* background-color: red; */
+}

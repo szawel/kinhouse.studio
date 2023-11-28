@@ -9,6 +9,8 @@ import ProjectHeader from '../components/ProjectHeader'
 import ProjectPoster from '../components/ProjectPoster';
 import ProjectLaurels from '../components/ProjectLaurels';
 import ProjectSynopsis from '../components/ProjectSynopsis';
+import ProjectTrailer from "../components/ProjectTrailer";
+
 
 function mapImagesToGatsbyImageData(images) {
   return images ? images.map(image => image.localFile.childImageSharp.gatsbyImageData) : [];
@@ -26,6 +28,7 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
     ProjectGallery: galleryImages,
     Poster: posterImages,
     Laurels: laurelsImages,
+    Trailer: trailer,
   } = strapiProject;
 
   // Map the ProjectGallery data to an array of gatsbyImageData
@@ -43,8 +46,9 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
       <div className="container">
         <ProjectBasicInformation basicInfo={basicInfo} />
         <ProjectProductionInformation productionStructure={productionStructure} />
-        <ProjectPoster imageData={poster} />
+        <ProjectTrailer trailer={trailer} />
         <ProjectSynopsis synopsis={synopsis} />
+        <ProjectPoster imageData={poster} />
         <ProjectGallery imageData={images} />
       </div>
 
@@ -114,6 +118,7 @@ export const query = graphql`
             }
           }
         }
+        Trailer
       }
     }
   `

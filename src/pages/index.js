@@ -18,7 +18,7 @@ import "../styles/global.css";
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
   query {
-    allStrapiProject(sort: {Categories: ASC}) {
+    allStrapiProject(sort: {Year: DESC}) {
       nodes {
         Name
         Title

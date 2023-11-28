@@ -1,10 +1,11 @@
 /* src/components/ProjectGallery.css */
 .projectGalleryContainer {
-    width: 100%;
+    width: 70%;
     height: 750px;
-    border-bottom: var(--primary-line);
     overflow: hidden;
-
+    border-bottom: var(--primary-line);
+    
+    
     @media screen {
         height: auto;
     }
@@ -12,20 +13,25 @@
 
 .projectGalleryImage {
     width: calc(100% - var(--primary-margin) * 2);
-    height: calc(100% - var(--primary-margin) * 2);
+    /* height: calc(100% - var(--primary-margin) * 2); */
     margin: var(--primary-margin);
-
+    
     transition: opacity 3.0s ease; /* Smooth transition for the fade effect */
     
     overflow: hidden;
     border-radius: var(--primary-border-radius);
     object-position: center; /* Center the image */
-
-
-
+    
+    
+    
     @media screen {
         height: auto;
         max-height: 500px;
         width: calc(100% - var(--primary-margin) * 2);
     }
+}
+
+.slick-slider {
+    border-bottom: var(--primary-line);
+    background-color: var(--primary-bg-color);
 }

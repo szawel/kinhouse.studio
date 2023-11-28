@@ -1,6 +1,11 @@
 .synopsis-wrapper {
-    width: 70%;
-    padding: var(--primary-text-padding);
+    width: 50%;
     border-bottom: var(--primary-line);
+    background-color: var(--primary-bg-color);
+    box-sizing: border-box;
+}
+
+.synopsis-information{
+    padding-left: var(--primary-margin);
     box-sizing: border-box;
 }
