@@ -1,28 +1,28 @@
 .ProjectLaurelsContainer {
-    width: 100%; /* Set the width to 100% */
-    height: calc(var(--primary-hight) * 3); /* Set a fixed height of 200px */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center children (images) horizontally */
-    align-items: center; /* Center children (images) vertically */
-    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: var(--primary-line);
 }
 
 .imageRow {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
     align-items: center;
     height: 100%;
 }
 
 .ProjectLaurelsImage {
     width: calc(var(--primary-hight) * 3);
-    object-fit: contain;
-    margin: 30px;
-    /* margin-right: 10px; */
+    /* object-fit: contain; */
+    margin: 15px;
 }
 
-/* Add this to remove margin from the last image */
+
+
 .ProjectLaurelsImage:last-child {
     margin-right: 0;
 }
