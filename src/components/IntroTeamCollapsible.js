@@ -1,6 +1,5 @@
 // IntroTeamCollapsible.js
 import React, { useState, useRef, useEffect } from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import '../styles/IntroTeamCollapsible.css';
 import '../styles/IntroTeam.css';
 import CloseIcon from '../matz/plus.svg'; // Import your SVG icon
@@ -30,11 +29,6 @@ const IntroTeam = ({ teamData }) => {
         <div className="team-collapsible-container">
             {teamData.map((member, index) => (
                 <div onClick={() => toggleOpen(index)} key={index} className={`team-collapsible-member-card ${openStatus[index] ? 'open' : ''}`}>
-                    {/* <GatsbyImage
-                        image={getImage(member.Photo.localFile)}
-                        alt={member.Name}
-                        className="team-member-photo"
-                    /> */}
                     <div className="team-collapsible-member-info">
                         <div className='team-collapsible-member'>{member.Name}</div>
                         <div className="team-collapsible-member-position">{member.Position}</div>

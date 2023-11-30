@@ -9,6 +9,13 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 850px) {
+    .projectPosterContainer {
+        width: 100%;
+    }
+}
+
+
 .projectPosterImage {
     /* height: calc(100% - var(--primary-margin) * 2); */
     height: 700px;

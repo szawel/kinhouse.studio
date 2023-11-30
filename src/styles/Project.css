@@ -38,7 +38,7 @@
     background-color: var(--primary-bg-color);
     margin-left: auto;
     transition: .2s;
-
+    
 }
 
 .projectContainerDot {
@@ -80,10 +80,28 @@
     max-width: calc(15% - var(--primary-margin));
 }
 
+@media (max-width: 850px) {
+    .id {
+        max-width: calc(20% - var(--primary-margin));
+    }
+}
+
 .title {
     max-width: calc(20% - var(--primary-margin));
 }
 
 .categories {
     max-width: calc(50% - var(--primary-margin));
+}
+
+@media (max-width: 850px) {
+    .title {
+        max-width: calc(50% - var(--primary-margin));
+    }
+}
+@media (max-width: 850px) {
+    .categories {
+        display:none;
+        max-width: calc(5% - var(--primary-margin));
+    }
 }

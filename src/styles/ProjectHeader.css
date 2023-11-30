@@ -20,6 +20,14 @@
     justify-content: center;
 }
 
+@media (max-width: 850px) {
+    .project-header {
+        height: calc(var(--primary-gallery-hight) / 2);
+        
+    }
+}
+
+
 .header-content {
     text-align: center;
     color: white;
@@ -35,8 +43,15 @@
     font-weight: 700;
     line-height: 1em;
     text-shadow: 0px 0px 15px black;
-
 }
+
+@media (max-width: 850px) {
+    .Title {
+        font-size: calc(var(--primary-font-size-medium) * 2);
+        
+    }
+}
+
 
 .SubTitle {
     margin-top: 0;
@@ -45,6 +60,12 @@
     font-size: calc(var(--primary-font-size-medium)*2);
     color: white;
     text-shadow: 0px 0px 15px black;
+}
+@media (max-width: 850px) {
+    .SubTitle {
+        font-size: calc(var(--primary-font-size-small) * 2);
+        
+    }
 }
 
 .Superscription {

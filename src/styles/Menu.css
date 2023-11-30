@@ -2,25 +2,54 @@
 .menu-container {
   height: var(--primary-hight);
   width: 100%;
+
   display: flex;
-  align-items: center;
-  border-bottom: var(--primary-line);
+  flex-wrap: wrap;
+  justify-content: space-between;
   box-sizing: border-box;
+
+  background-color: var(--primary-bg-color);
+  border-bottom: var(--primary-line);
+
   font-family: var(--primary-font);
   font-size: var(--primary-font-size-medium);
   color: var(--primary-font-color);
   font-weight: var(--primary-font-weight-normal);
-  background-color: var(--primary-bg-color);
 
   position: fixed;
   top: 0;
   z-index: 1000;
+
+  background-color: red;
+}
+
+@media (max-width: 810px) {
+  .menu-container {
+    height: calc(var(--primary-hight) * 2);
+
+  }
+}
+
+.sub-menu {
+  width: calc(100% - 60px);
+  margin-right: 60px;
+  height: 70px;
+  transform: translateY(-70px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media (max-width: 810px) {
+  .sub-menu {
+    width: calc(100% - 14px);
+    margin-right: 14px;
+  }
 }
 
 .menu-logo,
 .menu-button {
   height: var(--primary-hight);
-  position: absolute;
   cursor: pointer;
 }
 
@@ -28,6 +57,11 @@
   left: 0;
   margin-left: 9px;
 }
+
+@media (max-width: 640px) {
+  .menu-logo {}
+}
+
 
 .menu-button {
   align-items: center;
@@ -37,15 +71,22 @@
 }
 
 .menu-options {
+  height: var(--primary-hight);
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: var(--primary-hight);
-  margin-left: auto;
-  margin-right: calc(var(--primary-margin) * 2);
+
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s visibility 0.3s;
+  transition: opacity 1s visibility 1s;
+
+}
+
+@media (max-width: 810px) {
+  .menu-options {
+    transform: translateY(70px);
+  }
 }
 
 .menu-options.show {
@@ -57,7 +98,22 @@
   display: flex;
   margin: 0 35px;
   cursor: pointer;
+  margin-left: 35px;
+  margin-right: 35px;
+}
 
+@media (max-width: 1100px) {
+  .option-button {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .option-button {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 .vertical-line {

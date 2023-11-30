@@ -35,11 +35,12 @@
 
 .close-icon {
     margin: 45px var(--primary-margin) 0 auto;
-    height: 50px;
+    height: 40px;
     transform-origin: center;
     transform: rotateY(0deg) rotate(45deg);
     /* Removed duplicate transform */
     transition: transform 1s ease-in-out;
+    /* background-color: red; */
 }
 
 .close-icon.open {

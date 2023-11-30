@@ -16,10 +16,23 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 850px) {
+    .project-trailer {
+        width: 100%;
+    }
+}
+
 iframe {
 
     background-color: var(--primary-bg-color);
     width: 100%;
     height: auto;
     min-height: calc(70px * 7);
+}
+
+@media (max-width: 850px) {
+    iframe {
+        width: 100%;
+        min-height: 200px;
+    }
 }

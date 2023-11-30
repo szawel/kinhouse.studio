@@ -3,7 +3,7 @@ import { Link, navigate } from 'gatsby';
 import Lottie from 'react-lottie-player';
 import menuAnimation from '../matz/menu.01.json';
 import logoAnimation from '../matz/Logotyp.3.json';
-import '../styles/Menu.css';
+// import '../styles/Menu.css';
 
 const Menu = () => {
   const [isLogoAnimated, setIsLogoAnimated] = useState(false);
@@ -14,12 +14,12 @@ const Menu = () => {
   const frameRate = menuAnimation.fr;
   const totalFrames = menuAnimation.op - menuAnimation.ip;
   const menuAnimationDuration = (totalFrames / frameRate) * 1000;
-  
+
   // Calculate logo animation duration
   const logoframeRate = logoAnimation.fr;
   const logototalFrames = logoAnimation.op - logoAnimation.ip;
   const logoAnimationDuration = (logototalFrames / logoframeRate) * 1000;
-  
+
 
   const toggleLogoAnimation = () => {
     setIsLogoAnimated(true);
@@ -64,14 +64,14 @@ const Menu = () => {
       navigate(`/#${section}`);
     }
   };
-  
+
   // Add a keyboard event handler
   const handleKeyPress = (event, section, yOffset = -150) => {
     if (event.key === 'Enter' || event.key === ' ') {
       navigateToSection(section, yOffset);
     }
   };
-  
+
   return (
     <div className="menu-container">
       <Link to="/" onClick={toggleLogoAnimation} className="menu-logo">
@@ -81,46 +81,14 @@ const Menu = () => {
           style={{ width: '100%', height: '100%' }}
         />
       </Link>
-      <div className={`menu-options ${isOpen ? 'show' : ''}`}>
-        <div
-          tabIndex="0"
-          role="button"
-          onClick={() => navigateToSection('movies', 0)}
-          onKeyPress={(e) => handleKeyPress(e, 'movies')}
-          className="option-button">Movies
-        </div>
-        <div
-          tabIndex="0"
-          role="button"
-          onClick={() => navigateToSection('animation', 0)}
-          onKeyPress={(e) => handleKeyPress(e, 'animation')}
-          className="option-button">Animation
-        </div>
-        <div
-          tabIndex="0"
-          role="button"
-          onClick={() => navigateToSection('immersive', 0)}
-          onKeyPress={(e) => handleKeyPress(e, 'immersive')}
-          className="option-button">Immersive
-        </div>
-        <div className="vertical-line"></div>
-        <div
-          tabIndex="0"
-          role="button"
-          onClick={() => navigateToSection('about us', 0)}
-          onKeyPress={(e) => handleKeyPress(e, 'about us')}
-          className="option-button">About us
-        </div>
-        <div className="vertical-line"></div>
-        <div className="option-button">Doc</div>
-      </div>
       <div
+        className="menu-button"
         tabIndex="0"
         role="button"
         aria-label="Toggle menu"
         onClick={toggleMenu}
         onKeyPress={(e) => handleKeyPress(e, 'menu-button')}
-        className="menu-button">
+      >
         <Lottie
           animationData={menuAnimation}
           play={isMenuAnimated}
@@ -129,6 +97,41 @@ const Menu = () => {
           goTo={isMenuAnimated ? 0 : null} // Reset to start or leave as is
         />
       </div>
+      {/* <div className="sub-menu">
+        <div className={`menu-options ${isOpen ? 'show' : ''}`}>
+          <div
+            tabIndex="0"
+            role="button"
+            onClick={() => navigateToSection('movies', 0)}
+            onKeyPress={(e) => handleKeyPress(e, 'movies')}
+            className="option-button">Movies
+          </div>
+          <div
+            tabIndex="0"
+            role="button"
+            onClick={() => navigateToSection('animation', 0)}
+            onKeyPress={(e) => handleKeyPress(e, 'animation')}
+            className="option-button">Animation
+          </div>
+          <div
+            tabIndex="0"
+            role="button"
+            onClick={() => navigateToSection('immersive', 0)}
+            onKeyPress={(e) => handleKeyPress(e, 'immersive')}
+            className="option-button">Immersive
+          </div>
+          <div className="vertical-line"></div>
+          <div
+            tabIndex="0"
+            role="button"
+            onClick={() => navigateToSection('about us', 0)}
+            onKeyPress={(e) => handleKeyPress(e, 'about us')}
+            className="option-button">About us
+          </div>
+          <div className="vertical-line"></div>
+          <div className="option-button">Doc</div>
+        </div>
+      </div> */}
     </div>
   );
 };

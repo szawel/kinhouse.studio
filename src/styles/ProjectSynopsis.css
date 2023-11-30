@@ -13,3 +13,9 @@
     padding-bottom: calc(var(--primary-margin) / 2);
     box-sizing: border-box;
 }
+
+@media (max-width: 850px) {
+    .synopsis-wrapper {
+        width: 100%;
+    }
+}

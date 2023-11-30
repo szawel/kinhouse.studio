@@ -1,102 +1,114 @@
-/* Shared styles for all menu bars */
-.menu-bar,
-.dropdown-bar,
-.secondary-dropdown-bar {
+.menu-container {
+    width: 100%;
+    max-height: var(--primary-hight);
+    background-color: var(--primary-bg-color);
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    
+}
+
+.menu-gui-container {
     width: 100%;
     height: var(--primary-hight);
-    background-color: var(--primary-bg-color);
-    position: fixed;
-    left: 0;
+    background-color: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--primary-line);
+    position: relative;
+    z-index: 2000;    
+    box-sizing: border-box;
+}
+
+@media (max-width: 850px) {
+    .menu-gui-container {
+        background-color: var(--primary-bg-color);
+    }
+}
+
+.menu-list-container {
+    width: calc(100% - calc(var(--primary-hight) + 250px));
+    margin-left: 250px;
+    height: var(--primary-hight);
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateY(-140px);
+    
+    background-color: none;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    z-index: 2000;
+    /* border-bottom: var(--primary-line); */
+    box-sizing: border-box;
+}
+
+@media (max-width: 850px) {
+    .menu-list-container {
+        background-color: var(--primary-bg-color);
+        height: calc(var(--primary-hight) * 5);
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0px;
+        z-index: 1000;
+        transform: translateY(calc(var(--primary-hight) * -5));
+    }
+}
+
+.menu-list-container.open {
+    transform: translateY(-70px);
+    transition: transform 0.5s ease-in-out;
+    
+}
+@media (max-width: 850px) {
+    .menu-list-container.open {
+        transform: translateX(0px);
+    }
+}
+
+.gui-logo {
+    width: 250px;
+    height: var(--primary-hight);
+
+    cursor: pointer;
+}
+
+.gui-button {
+    width: var(--primary-hight);
+    height: var(--primary-hight);
+    background-color: #00f;
+
+    cursor: pointer;
+}
+
+.list-button {
     display: flex;
     align-items: center;
-    border-bottom: var(--primary-line);
+    
+    /* background-color: violet; */
+    margin: 5px 10px 5px 10px;
+    
     font-family: var(--primary-font);
     font-size: var(--primary-font-size-medium);
     color: var(--primary-font-color);
     font-weight: var(--primary-font-weight-normal);
-    font-style: normal;
-    box-sizing: border-box;
-
-}
-
-/* Main menu bar styles */
-.menu-bar {
-    top: 0;
-    z-index: 1000;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-/* Styles for individual menu items */
-.menu-item {
-    padding: 10px 10px;
+    position: relative;
+    z-index: 99999;    
+    
     cursor: pointer;
-    margin: 0 10px;
 }
 
-.menu-item:first-child {
-    margin-left: 20px;
-}
-
-.menu-item:last-child {
-    margin-right: 20px;
-}
-
-.menu-item img {
-    width: 30px;
-    height: auto;
-}
-
-/* Dropdown bar styles */
-.dropdown-bar,
-.secondary-dropdown-bar {
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.dropdown-bar {
-    top: var(--primary-hight);
-    z-index: 999;
-}
-
-.secondary-dropdown-bar {
-    top: calc(var(--primary-hight) * 2);
-    z-index: 998;
-}
-
-/* Active dropdown item styles */
-.dropdown-item.active,
-.menu-item.active,
-.menu-item:hover,
-.dropdown-item:hover,
-.menu-item.bold,
-.dropdown-item.bold {
-    font-weight: var(--primary-font-weight-bold);
-}
-
-/* General dropdown item styles */
-.dropdown-item {
-    height: auto;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Active state for dropdowns */
-.dropdown-active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Specific style for bold items */
-.menu-item.bold,
-.dropdown-item.bold {
-    background-color: var(--primary-bg-color);
-}
-
-.dropdown-item-wrapper {
-    display: flex;
-    width: calc(var(--primary-hight) * 2);
-    justify-content: center;
-    align-items: center;
+@media (max-width: 850px) {
+    .list-button {
+        width: 100%;
+        height: var(--primary-hight);
+        justify-content: center;
+        transform: translateX(0px);
+        margin: 0px;
+        font-size: var(--primary-font-size-large);
+        border-bottom: var(--primary-line);
+    }
 }

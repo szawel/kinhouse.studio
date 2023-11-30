@@ -3,14 +3,14 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import slugify from "slugify"; // Make sure you have slugify installed
 
-import Menu from "../components/Menu";
-import Categories from '../components/Categories';
-import CategoriesCollapsible from '../components/CategoriesCollapsible';
+// import Menu from "../components/Menu";
+import MenuBar from "../components/MenuBar";
+import Categories from "../components/Categories";
+import CategoriesCollapsible from "../components/CategoriesCollapsible";
 import Gallery from "../components/Gallery";
 import Project from "../components/Project";
-import IntroDescription from '../components/IntroDescription';
-// import IntroTeam from '../components/IntroTeam';
-import IntroTeamCollapsible from '../components/IntroTeamCollapsible';
+import IntroDescription from "../components/IntroDescription";
+import IntroTeamCollapsible from "../components/IntroTeamCollapsible";
 import FooterNote from "../components/FooterNote";
 
 import "../styles/global.css";
@@ -79,7 +79,8 @@ const IndexPage = () => {
   return (
     <div id="index">
 
-      <Menu />
+      {/* <Menu /> */}
+      <MenuBar />
       <div className="space" id="studio"></div>
 
       <Gallery imagesData={data.strapiMain.IntroGalery} />
@@ -110,17 +111,14 @@ const IndexPage = () => {
           </Link>
         ))}
       </CategoriesCollapsible>
-      <div className="space">
-
-      </div>
+      <div className="space" />
 
       <div id="about us"></div>
       <Categories text="About us" />
       <IntroDescription markdownData={introDescriptionMarkdown} />
-
-      {/* <IntroTeam teamData={teamData} /> */}
       <IntroTeamCollapsible teamData={teamData} />
 
+      <div className="space" />
       <FooterNote />
 
     </div>

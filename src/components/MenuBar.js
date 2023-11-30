@@ -1,84 +1,77 @@
-//import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, navigate } from 'gatsby';
-
-import Menu01 from '../matz/menu.01.svg'; // Adjust the path as necessary
-import Menu02 from '../matz/menu.02.svg'; // Adjust the path as necessary
-
-import React, { useState } from 'react';
-// import "../styles/global.css"
+import Lottie from 'react-lottie-player';
+import logoAnimation from '../matz/Logotyp.3.json';
+import '../styles/MenuBar.css';
+import CloseIcon from '../matz/plus.svg'; // Import your SVG icon
 
 const MenuBar = () => {
-    const [isPrimaryDropdownOpen, setIsPrimaryDropdownOpen] = useState(false);
-    const [openSecondaryDropdown, setOpenSecondaryDropdown] = useState(null);
+    const [isLogoAnimated, setIsLogoAnimated] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const togglePrimaryDropdown = () => {
-        setIsPrimaryDropdownOpen(!isPrimaryDropdownOpen);
-        if (isPrimaryDropdownOpen) {
-            setOpenSecondaryDropdown(null); // Close secondary dropdown when primary is closed
-        }
+    // Calculate logo animation duration
+    const logoframeRate = logoAnimation.fr;
+    const logototalFrames = logoAnimation.op - logoAnimation.ip;
+    const logoAnimationDuration = (logototalFrames / logoframeRate) * 1000;
+
+
+    const toggleLogoAnimation = () => {
+        setIsLogoAnimated(true);
+      };
+    
+    const toggleOpen = () => {
+        setIsOpen(!isOpen);
+        console.log("----- ----- ----- ----- ----- toggleOpen")
     };
 
-    const navigateToSection = (section, yOffset = -100) => { // Default Y-offset set to -100
+    const navigateToSection = (section, yOffset = -150) => {
         if (window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html') {
-            const sectionElement = document.getElementById(section);
-            if (sectionElement) {
-                const y = sectionElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
+          const sectionElement = document.getElementById(section);
+          if (sectionElement) {
+            // Wait for the next event loop tick to ensure all elements are rendered correctly
+            setTimeout(() => {
+              const y = sectionElement.getBoundingClientRect().top + window.pageYOffset + -70;
+              window.scrollTo({ top: y, behavior: 'smooth' });
+            }, 0);
+          }
         } else {
-            navigate(`/#${section}`);
+          navigate(`/#${section}`);
         }
-    };
+      };
 
-    const handleSecondaryDropdown = (option) => {
-        setOpenSecondaryDropdown(option === openSecondaryDropdown ? null : option);
-    };
+    const toggleMenuList = isOpen ? "menu-list-container open" : "menu-list-container";
+    
+    useEffect(() => {
+        let logoTimer;
+        if (isLogoAnimated) {
+          logoTimer = setTimeout(() => {
+            setIsLogoAnimated(false);
+          }, logoAnimationDuration);
+        }
+        return () => clearTimeout(logoTimer);
+      }, [isLogoAnimated, logoAnimationDuration]);
 
     return (
-        <div >
-            <div className="menu-bar">
-                <Link to="/" className="menu-item">kinhouse</Link>
-                <div onClick={togglePrimaryDropdown} className={`menu-item ${isPrimaryDropdownOpen ? 'active' : ''}`}>
-                    <img src={isPrimaryDropdownOpen ? Menu01 : Menu02} alt="Menu" />
+        <div className='menu-container'>
+            <div className='menu-gui-container'>
+                <div className='gui-logo'>
+                    <Link to="/" onClick={toggleLogoAnimation} className="menu-logo">
+                        <Lottie
+                            animationData={logoAnimation}
+                            play={isLogoAnimated}
+                            style={{ width: '100%', height: '100%' }}
+                        />
+                    </Link>
                 </div>
+                <div className='gui-button' onClick={toggleOpen}></div>
             </div>
-
-            <div className={`dropdown-bar ${isPrimaryDropdownOpen ? 'dropdown-active' : ''}`}>
-                <div className="dropdown-item-wrapper">
-                    <div onClick={() => handleSecondaryDropdown('option1')} className={`dropdown-item ${openSecondaryDropdown === 'option1' ? 'active' : ''}`}>Projects</div>
-                </div>
-                <div className="dropdown-item-wrapper">
-                    <div onClick={() => handleSecondaryDropdown('option2')} className={`dropdown-item ${openSecondaryDropdown === 'option2' ? 'active' : ''}`}>Studio</div>
-                </div>
+            <div onClick={toggleOpen} className={toggleMenuList}>
+                <div className='list-button' onClick={() => navigateToSection('movies', 0)} >Movies</div>
+                <div className='list-button' onClick={() => navigateToSection('animation', 0)} >Animation</div>
+                <div className='list-button' onClick={() => navigateToSection('immersive', 0)} >Immersive</div>
+                <div className='list-button' onClick={() => navigateToSection('about us', 0)} >About us</div>
+                <div className='list-button' onClick={() => navigateToSection('movies', 0)} >Doc</div>
             </div>
-
-            {openSecondaryDropdown === 'option1' && (
-                <div className="secondary-dropdown-bar dropdown-active">
-                    <div className="dropdown-item-wrapper">
-                        <div onClick={() => navigateToSection('movies', -200)} className="dropdown-item">Movies</div>
-                    </div>
-                    <div className="dropdown-item-wrapper">
-                        <div onClick={() => navigateToSection('animation', -200)} className="dropdown-item">Animation</div>
-                    </div>
-                    <div className="dropdown-item-wrapper">
-                        <div onClick={() => navigateToSection('immersive', -200)} className="dropdown-item">Immersive</div>
-                    </div>
-                </div>
-            )}
-
-            {openSecondaryDropdown === 'option2' && (
-                <div className="secondary-dropdown-bar dropdown-active">
-                    <div className="dropdown-item-wrapper">
-                        <div onClick={() => navigateToSection('abount', -200)} className="dropdown-item">Abount us</div>
-                    </div>
-                    <div className="dropdown-item-wrapper">
-                        <div onClick={() => navigateToSection('media', -200)} className="dropdown-item">Media</div>
-                    </div>
-                    <div className="dropdown-item-wrapper">
-                        <div onClick={() => navigateToSection('contact', -200)} className="dropdown-item">Contact</div>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };
