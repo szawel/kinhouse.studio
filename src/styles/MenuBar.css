@@ -34,7 +34,7 @@
     height: var(--primary-hight);
     
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     transform: translateY(-140px);
     
@@ -79,7 +79,6 @@
 .gui-button {
     width: var(--primary-hight);
     height: var(--primary-hight);
-    background-color: #00f;
 
     cursor: pointer;
 }
@@ -89,7 +88,7 @@
     align-items: center;
     
     /* background-color: violet; */
-    margin: 5px 10px 5px 10px;
+    margin: 5px 30px 5px 30px;
     
     font-family: var(--primary-font);
     font-size: var(--primary-font-size-medium);
@@ -111,4 +110,63 @@
         font-size: var(--primary-font-size-large);
         border-bottom: var(--primary-line);
     }
+}
+
+
+.menu-bar{
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--primary-bg-color); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.bar-a{
+    height: 10px;
+    width: 60px;
+    margin: 5px;
+    background-color: var(--primary-fg-color);
+    transition: 0.3s ease-in-out;
+}
+.bar-a.open{
+    margin: 0px;
+    padding: 0px;
+    transform: rotateY(0deg) rotate(45deg) translateY(3.6px) translateX(3.6px);
+    transition: 0.3s ease-in-out;
+}
+
+.bar-b{
+    height: 10px;
+    width: 60px;
+    margin: 5px;
+    background-color: var(--primary-fg-color);
+    transition: 0.3s ease-in-out;
+}
+
+.bar-b.open{
+    margin: 0px;
+    padding: 0px;
+
+    transform: rotateY(0deg) rotate(-45deg) translateY(-3.6px) translateX(3.6px);
+    transition: 0.3s ease-in-out;
+}
+
+.bar-c{
+    height: 10px;
+    width: 60px;
+    margin: 5px;
+    background-color: var(--primary-fg-color);
+    transition: 0.3s ease-in-out;
+}
+
+.bar-c.open{
+    /* display: none; */
+    height: 0px;
+    width: 0px;
+    margin: 0px;
+    padding: 0px;
+    transition: 0.3s ease-in-out;
 }
