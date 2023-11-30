@@ -16,7 +16,7 @@
 
 .team-collapsible-member-card {
     width: 50%;
-    max-height: 200px;
+    height: 200px;
     background-color: var(--primary-bg-color);
     
     display: inline-flex;
@@ -29,7 +29,7 @@
     /* border-left: var(--primary-line); */
     
     
-    transition: max-height 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out;
     box-sizing: border-box;
     
 }
@@ -37,7 +37,7 @@
 @media (max-width: 850px) {
     .team-collapsible-member-card {
         width: 100%;
-        max-height: 250px;
+        height: 250px;
         border-left: none;
         border-left: right;
     }
@@ -74,8 +74,8 @@
 }
 
 .team-collapsible-member-card.open {
-    max-height: calc(200px + 500px);
-    transition: max-height 0.5s ease-in-out;
+    height: calc(200px + 250px);
+    transition: height 0.5s ease-in-out;
 }
 
 .team-member-photo {
@@ -88,15 +88,16 @@
     width: 60%;
     text-align: left;
     padding: var(--primary-margin);
-    padding-bottom: 15px;
-
+    height: fit-content;
 }
 
 .team-collapsible-member-description {
     width: 70%;
-
-    overflow: hidden;
     height: 0px;
+    display: flex;
+    align-content: flex-start;
+    overflow: hidden;
+
     margin-left: var(--primary-margin);
 
     transition: height 0.5s ease-in-out;
@@ -110,11 +111,8 @@
 
 
 .team-collapsible-member-description.open {
-    height: calc(var(--primary-hight) * 4);
-    
+    height: calc(100%);
     transition: height 0.5s ease-in-out;
-    
-    margin-bottom: 30px;
 
 }
 
@@ -141,6 +139,7 @@
 
 .team-member-bio {
     width: 100%;
+    height: 100%;
     padding-top: 0px;
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-medium));

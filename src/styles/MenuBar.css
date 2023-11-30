@@ -13,13 +13,14 @@
 .menu-gui-container {
     width: 100%;
     height: var(--primary-hight);
-    background-color: none;
     display: flex;
     justify-content: space-between;
     border-bottom: var(--primary-line);
     position: relative;
     z-index: 2000;    
     box-sizing: border-box;
+    
+    background-color: none;
 }
 
 @media (max-width: 850px) {
@@ -46,6 +47,7 @@
     box-sizing: border-box;
 }
 
+
 @media (max-width: 850px) {
     .menu-list-container {
         background-color: var(--primary-bg-color);
@@ -71,12 +73,19 @@
 
 .gui-logo {
     width: 250px;
+    margin-left: 11px;
     height: var(--primary-hight);
-
     cursor: pointer;
 }
 
+@media (max-width: 850px) {
+    .gui-logo {
+        margin-left: 0px;
+    }
+}
+
 .gui-button {
+    margin-right: 9px;
     width: var(--primary-hight);
     height: var(--primary-hight);
 
@@ -88,7 +97,7 @@
     align-items: center;
     
     /* background-color: violet; */
-    margin: 5px 30px 5px 30px;
+    margin: 5px 20px 5px 20px;
     
     font-family: var(--primary-font);
     font-size: var(--primary-font-size-medium);
@@ -98,6 +107,12 @@
     z-index: 99999;    
     
     cursor: pointer;
+}
+
+@media (max-width: 920px) {
+    .list-button {
+        margin: 5px 14px 5px 14px;
+    }
 }
 
 @media (max-width: 850px) {
@@ -119,54 +134,54 @@
     /* background-color: var(--primary-bg-color); */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    flex-wrap: nowrap;
     box-sizing: border-box;
+    /* background-color: red; */
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* background-color: red; */
 }
 
 .bar-a{
-    height: 10px;
-    width: 60px;
-    margin: 5px;
+    height: 4px;
+    width: 100%;
+    /* margin: 5px; */
     background-color: var(--primary-fg-color);
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .bar-a.open{
     margin: 0px;
     padding: 0px;
-    transform: rotateY(0deg) rotate(45deg) translateY(3.6px) translateX(3.6px);
-    transition: 0.3s ease-in-out;
+    transform: rotateY(0deg) rotate(45deg) translateY(6px) translateX(6px);
+    transition: 0.5s ease-in-out;
 }
 
 .bar-b{
-    height: 10px;
-    width: 60px;
-    margin: 5px;
+    height: 4px;
+    width: 100%;
     background-color: var(--primary-fg-color);
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .bar-b.open{
     margin: 0px;
     padding: 0px;
-
-    transform: rotateY(0deg) rotate(-45deg) translateY(-3.6px) translateX(3.6px);
-    transition: 0.3s ease-in-out;
+    
+    transform: rotateY(0deg) rotate(-45deg) translateY(-2.5px) translateX(2.5px);
+    transition: 0.5s ease-in-out;
 }
 
 .bar-c{
-    height: 10px;
-    width: 60px;
-    margin: 5px;
+    height: 4px;
+    width: 100%;
     background-color: var(--primary-fg-color);
-    transition: 0.3s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 .bar-c.open{
-    /* display: none; */
     height: 0px;
-    width: 0px;
-    margin: 0px;
-    padding: 0px;
-    transition: 0.3s ease-in-out;
+    transition: 0.25s ease-in-out;
 }

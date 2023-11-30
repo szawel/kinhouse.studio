@@ -7,7 +7,7 @@
   --primary-margin: 30px;
   --primary-line: 1px solid var(--primary-fg-color);
   --primary-outline: 1px solid var(--primary-fg-color);
-
+  
   /* Text options */
   --primary-font: "bc-novatica-cyr";
   --primary-font-color: var(--primary-fg-color);
@@ -17,20 +17,20 @@
   --primary-font-size-large: 36pt;
   --primary-font-weight-normal: 200;
   --primary-font-weight-bold: 500;
-
-
+  
+  
   /* Galery */
-  --primary-gallery-hight: calc(var(--primary-hight)*7);
+  /* --primary-gallery-hight: calc(var(--primary-hight)*7); */
+  --primary-gallery-hight: 736px;
   --primary-gallery-margin: 30px;
   --primary-border-radius: 15px;
-
+  
   --primary-text-padding: 15px 0px 20px 30px;
 }
 
 @media (max-width: 850px) {
   :root {
-    --primary-margin: 10px;
-    --primary-text-padding: 5px 0px 20px 10px;
+    --primary-margin: 15px;
   }
 }
 
