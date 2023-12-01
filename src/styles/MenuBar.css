@@ -88,8 +88,13 @@
     margin-right: 9px;
     width: var(--primary-hight);
     height: var(--primary-hight);
-
     cursor: pointer;
+}
+
+@media (max-width: 850px) {
+    .gui-button {
+        margin-right: -2px;
+    }
 }
 
 .list-button {
