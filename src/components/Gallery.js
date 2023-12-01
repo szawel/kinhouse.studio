@@ -15,7 +15,7 @@ const Gallery = ({ imagesData }) => {
             setTimeout(() => {
                 setCurrentImageIndex(currentIndex => (currentIndex + 1) % images.length);
                 setFade(true);
-            }, 100); // Half the interval time for smooth transition
+            }, 20); // Half the interval time for smooth transition
         }, 3000); // Change image every 3 seconds
 
         return () => clearInterval(interval);
