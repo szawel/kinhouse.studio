@@ -18,20 +18,16 @@
     width: 50%;
     height: 200px;
     background-color: var(--primary-bg-color);
-    
+
     display: inline-flex;
     overflow: hidden;
     flex-direction: row;
     flex-wrap: wrap;
-    
+
     border-bottom: var(--primary-line);
-    /* border-right: var(--primary-line); */
-    /* border-left: var(--primary-line); */
-    
-    
+
     transition: height 0.5s ease-in-out;
     box-sizing: border-box;
-    
 }
 
 @media (max-width: 850px) {
@@ -58,6 +54,7 @@
 .team-collapsible-member-card.open+.team-collapsible-member-card {
     border-left: var(--primary-line);
 }
+
 @media (max-width: 850px) {
     .team-collapsible-member-card.open+.team-collapsible-member-card {
         border-left: none;
@@ -67,6 +64,7 @@
 .team-collapsible-member-card:not(:last-child) {
     border-right: var(--primary-line);
 }
+
 @media (max-width: 850px) {
     .team-collapsible-member-card:not(:last-child) {
         border-right: none;
@@ -74,12 +72,12 @@
 }
 
 .team-collapsible-member-card.open {
-    height: calc(200px + 250px);
+    height: calc(400px + 250px);
     transition: height 0.5s ease-in-out;
 }
 
 .team-member-photo {
-    height: calc(100% - var(--primary-margin) * 2);
+    height: calc(100% - var(--primary-margin) * 4);
     margin: var(--primary-margin);
     border-radius: var(--primary-border-radius);
 }
@@ -134,7 +132,6 @@
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-medium));
     color: var(--primary-font-color);
-    
 }
 
 .team-member-bio {
@@ -142,10 +139,14 @@
     height: 100%;
     padding-top: 0px;
     font-family: var(--primary-font);
-    font-size: calc(var(--primary-font-size-medium));
     color: var(--primary-font-color);
     line-height: 1.5;
 }
+
+.team-member-bio p {
+    font-size: var(--primary-font-size-middle);
+}
+
 
 .close-collapsible-icon {
     margin: 45px var(--primary-margin) 0 auto;
@@ -155,12 +156,9 @@
     /* Removed duplicate transform */
     transition: transform 1s ease-in-out;
     cursor: pointer;
-
-
 }
 
 .close-collapsible-icon.open {
     transform: rotateY(0deg) rotate(-180deg);
     cursor: pointer;
-
 }

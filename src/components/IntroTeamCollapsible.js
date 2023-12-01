@@ -1,7 +1,6 @@
 // IntroTeamCollapsible.js
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/IntroTeamCollapsible.css';
-import '../styles/IntroTeam.css';
 import CloseIcon from '../matz/plus.svg'; // Import your SVG icon
 
 const IntroTeam = ({ teamData }) => {
