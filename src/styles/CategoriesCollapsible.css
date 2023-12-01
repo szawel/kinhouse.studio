@@ -25,12 +25,11 @@
     font-size: var(--primary-font-size-large);
     color: var(--primary-font-color);
     padding-left: var(--primary-margin);
-    /* Adjust as needed, assuming padding is universal */
 }
 
 .categories-collapsible-text {
-    width: 50%;
-    padding-top: 35px;
+    width: 70%;
+    padding-top: calc((var(--primary-hight) / 2) + 5px);
 }
 
 .close-icon {
