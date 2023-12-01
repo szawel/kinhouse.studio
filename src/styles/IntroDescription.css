@@ -1,29 +1,53 @@
 /* IntroDescription.css */
 .intro-description {
-    width: calc(100% - var(--primary-hight) * 2);
-    padding: calc(var(--primary-hight)/2);
-    
-    /* height: calc(var(--primary-hight) * 7); */
-    display: flex;
-    /* text-align:justify; */
-    text-justify: distribute-all-lines;
-    text-justify:newspaper;
-    align-items: center;
-    
-    font-family: var(--primary-font);
-    font-size: var(--primary-font-size-large);
-    color: var(--primary-font-color);
-    font-weight: var(--primary-font-weight-normal);
-    font-style: normal;
-    border-bottom: var(--primary-line);
-    overflow: hidden;
+  width: calc(100% - var(--primary-hight) * 2);
+  padding: calc(var(--primary-hight)/2);
+  margin-top: 30px;
+  margin-bottom: 35px;
+
+  display: flex;
+  text-justify: distribute-all-lines;
+  text-justify: newspaper;
+  align-items: center;
+
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size-large);
+  color: var(--primary-font-color);
+  font-weight: var(--primary-font-weight-normal);
+  font-style: normal;
+  overflow: hidden;
+}
+
+.intro-description-wrapper {
+  width: 100%;
+  border-bottom: var(--primary-line);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .intro-description {
+    font-size: var(--primary-font-size-medium-large);
   }
-  
-  @media (max-width: 850px) {
-    .intro-description {
-      width: calc(100% - var(--primary-hight));
-      font-size: var(--primary-font-size-middle);
-      padding-left: calc(var(--primary-hight) / 2);
-      padding-right: calc(var(--primary-hight) / 2);
-    }
+}
+
+@media (max-width: 850px) {
+  .intro-description {
+    width: calc(100% - var(--primary-hight));
+    font-size: var(--primary-font-size-middle);
+    padding-left: var(--primary-margin);
+    padding-right: var(--primary-margin);
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro-description {
+    padding-left: var(--primary-margin);
+    padding-right: var(--primary-margin);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: var(--primary-font-size-middle);
+    /* background-color: red; */
+  }
 }
