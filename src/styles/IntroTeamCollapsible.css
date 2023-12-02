@@ -1,10 +1,9 @@
-/* IntroTeam.css */
+/* Base styles for team collapsible container */
 .team-collapsible-container {
     width: 100%;
     display: flex;
-    box-sizing: border-box;
     flex-wrap: wrap;
-    border-bottom: var(--primary-line);
+    box-sizing: border-box;
     background-size: 10px 10px;
     background-image:
         radial-gradient(circle, var(--primary-fg-color) 1px, transparent 1px),
@@ -12,128 +11,94 @@
     background-position: 0 0, 5px 5px;
 }
 
-
-
+/* Styles for individual member cards */
 .team-collapsible-member-card {
     width: 50%;
     height: 200px;
     background-color: var(--primary-bg-color);
-
     display: inline-flex;
-    overflow: hidden;
     flex-direction: row;
     flex-wrap: wrap;
-
+    overflow: hidden;
     border-bottom: var(--primary-line);
-
     transition: height 0.5s ease-in-out;
     box-sizing: border-box;
 }
 
-@media (max-width: 850px) {
-    .team-collapsible-member-card {
-        width: 100%;
-        height: 250px;
-        border-left: none;
-        border-left: right;
-    }
-}
-
-
-
-.team-collapsible-member-card+.team-collapsible-member-card {
-    border-left: var(--primary-line);
-}
-
-@media (max-width: 850px) {
-    .team-collapsible-member-card+.team-collapsible-member-card {
-        border-left: none;
-    }
-}
-
+/* Handling borders between member cards */
+.team-collapsible-member-card+.team-collapsible-member-card,
 .team-collapsible-member-card.open+.team-collapsible-member-card {
     border-left: var(--primary-line);
 }
 
-@media (max-width: 850px) {
-    .team-collapsible-member-card.open+.team-collapsible-member-card {
-        border-left: none;
-    }
-}
-
-.team-collapsible-member-card:not(:last-child) {
-    border-right: var(--primary-line);
-}
-
-@media (max-width: 850px) {
+/* Adjustments for member cards at smaller screen sizes */
+@media (max-width: 1100px) {
+    .team-collapsible-member-card,
+    .team-collapsible-member-card+.team-collapsible-member-card,
+    .team-collapsible-member-card.open+.team-collapsible-member-card,
     .team-collapsible-member-card:not(:last-child) {
+        width: 100%;
+        border-left: none;
         border-right: none;
     }
-}
-
-.team-collapsible-member-card.open {
-    height: calc(400px + 250px);
-    transition: height 0.5s ease-in-out;
-}
-
-.team-member-photo {
-    height: calc(100% - var(--primary-margin) * 4);
-    margin: var(--primary-margin);
-    border-radius: var(--primary-border-radius);
-}
-
-.team-collapsible-member-info {
-    width: 60%;
-    text-align: left;
-    padding: var(--primary-margin);
-    height: fit-content;
-}
-
-.team-collapsible-member-description {
-    width: 70%;
-    height: 0px;
-    display: flex;
-    align-content: flex-start;
-    overflow: hidden;
-
-    margin-left: var(--primary-margin);
-
-    transition: height 0.5s ease-in-out;
-}
-
-@media (max-width: 850px) {
     .team-collapsible-member-description {
         width: 90%;
     }
 }
 
+/* Expanded state for member cards */
+.team-collapsible-member-card.open {
+    height: calc(400px + 150px);
+}
+
+/* Styles for member info section */
+.team-collapsible-member-info {
+    width: 75%;
+    text-align: left;
+    padding: var(--primary-margin);
+    height: fit-content;
+}
+
+@media (max-width: 1100px) {
+    .team-collapsible-member-info {
+        padding: 10px 0px 0px 15px;
+    }
+}
+
+/* Styles for member description */
+.team-collapsible-member-description {
+    width: 75%;
+    height: 0px;
+    display: flex;
+    align-content: flex-start;
+    overflow: hidden;
+    margin-left: var(--primary-margin);
+    transition: height 0.5s ease-in-out;
+}
 
 .team-collapsible-member-description.open {
-    height: calc(100%);
-    transition: height 0.5s ease-in-out;
+    height: 100%;
+}
 
+/* General styles for team member elements */
+.team-collapsible-member,
+.team-collapsible-member-position,
+.team-collapsible-member-email {
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size-medium);
+    color: var(--primary-font-color);
 }
 
 .team-collapsible-member {
-    font-family: var(--primary-font);
-    font-size: calc(var(--primary-font-size-large));
-    color: var(--primary-font-color);
+    font-size: var(--primary-font-size-large);
 }
 
-.team-collapsible-member-position {
-    margin-top: 10px;
-    font-family: var(--primary-font);
-    font-size: calc(var(--primary-font-size-medium));
-    color: var(--primary-font-color);
-}
-
+.team-collapsible-member-position,
 .team-collapsible-member-email {
     margin-top: 10px;
-    font-family: var(--primary-font);
-    font-size: calc(var(--primary-font-size-medium));
-    color: var(--primary-font-color);
 }
 
+/* Styles for the team member bio */
 .team-member-bio {
     width: 100%;
     height: 100%;
@@ -147,18 +112,16 @@
     font-size: var(--primary-font-size-small);
 }
 
-
+/* Styles for close icon */
 .close-collapsible-icon {
     margin: 45px var(--primary-margin) 0 auto;
     height: 40px;
     transform-origin: center;
     transform: rotateY(0deg) rotate(45deg);
-    /* Removed duplicate transform */
     transition: transform 1s ease-in-out;
     cursor: pointer;
 }
 
 .close-collapsible-icon.open {
     transform: rotateY(0deg) rotate(-180deg);
-    cursor: pointer;
 }

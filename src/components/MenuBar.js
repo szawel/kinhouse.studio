@@ -92,7 +92,7 @@ const MenuBar = () => {
         <div className='list-button' onClick={() => navigateToSection('animation', 0)} >Animation</div>
         <div className='list-button' onClick={() => navigateToSection('immersive', 0)} >Immersive</div>
         <div className='list-button' onClick={() => navigateToSection('about us', 0)} >About us</div>
-        <div className='list-button' onClick={() => navigateToSection('movies', 0)} >Doc</div>
+        {/* <div className='list-button' onClick={() => navigateToSection('movies', 0)} >Doc</div> */}
       </div>
     </div>
   );

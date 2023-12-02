@@ -32,7 +32,6 @@
 @media (max-width: 1100px) {
   :root {
     --primary-margin: 15px;
-    --primary-margin: 10px;
     --primary-text-padding: 5px 0px 10px 10px;
   }
 }
@@ -43,7 +42,7 @@
   width: 100%;
   height: calc(var(--primary-hight));
   border-bottom: var(--primary-line);
-  border-top: var(--primary-line);
+  /* border-top: var(--primary-line); */
   background-size: 10px 10px;
   background-image:
     radial-gradient(circle, var(--primary-fg-color) 1px, transparent 1px),
