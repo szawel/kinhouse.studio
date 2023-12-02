@@ -4,22 +4,35 @@ import "../styles/FooterNote.css";
 import logoAnimation from '../matz/Logo.Verical.02.json';
 
 const FooterNote = () => {
+    // Initialize state with a function to ensure it runs only on client-side
+    const [isMobile, setIsMobile] = useState(
+        typeof window !== 'undefined' ? window.innerWidth < 768 : false
+    );
+
     const [isLogoAnimated, setIsLogoAnimated] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-
     const frameRate = logoAnimation.fr;
     const totalFrames = logoAnimation.op - logoAnimation.ip;
     const logoAnimationDuration = (totalFrames / frameRate) * 1000;
-  
 
     useEffect(() => {
+        // Define the function inside useEffect
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
+            if (typeof window !== 'undefined') {
+                setIsMobile(window.innerWidth < 768);
+            }
         };
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        // Attach event listener conditionally
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', handleResize);
+        }
+
+        // Cleanup
+        return () => {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('resize', handleResize);
+            }
+        };
     }, []);
 
     const toggleLogoAnimation = () => {
@@ -49,15 +62,13 @@ const FooterNote = () => {
                 onKeyDown={handleKeyDown}
                 role="button"
                 tabIndex="0"
-                aria-label="Toggle logo animation" // Add an aria-label here
+                aria-label="Toggle logo animation"
                 className="logotyp"
             >
                 <Lottie
                     animationData={logoAnimation}
                     play={isLogoAnimated}
                     style={{ width: '100%', height: '100%' }}
-                // loop={false}
-                // onComplete={() => setIsLogoAnimated(false)}
                 />
             </div>
         </div>

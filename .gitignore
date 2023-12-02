@@ -2,6 +2,7 @@
 logs
 *.log
 .env.development
+.env.production
 *.development
 
 # Runtime data

@@ -13,13 +13,14 @@ const strapiConfig = {
   collectionTypes: ["project", "team"],
   singleTypes: ["portfolio", "main"],
   remoteFileHeaders: {
-    Referer: "https://your-site-domain/",
+    Referer: "https://kinhouse.pl/",
   },
 };
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    DEV_SSR: true,
+    siteUrl: `https://www.kinhouse.pl`,
   },
   plugins: [
     `gatsby-plugin-image`,
