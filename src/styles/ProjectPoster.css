@@ -4,9 +4,9 @@
     padding: 0px;
     width: 30%;
     outline: var(--primary-outline);
-    border-right: var(--primary-line);
     overflow: hidden;
     box-sizing: border-box;
+    background-color: var(--primary-bg-color);
 }
 
 @media (max-width: 850px) {
@@ -17,17 +17,34 @@
 
 
 .projectPosterImage {
-    /* height: calc(100% - var(--primary-margin) * 2); */
-    height: 700px;
     width: calc(100% - var(--primary-margin) * 2);
     margin: var(--primary-margin);
-    box-sizing: border-box;
-
-    transition: opacity 3.0s ease;
-    background-color: var(--primary-bg-color);
-    overflow: hidden;
-
     border-radius: var(--primary-border-radius);
-    object-position: center;
 
+}
+
+button{
+    fill: red;
+    counter-reset: none;
+}
+
+button.slick-arrow.slick-prev::before{
+    display: none;
+}
+button.slick-arrow.slick-next::before{
+    display: none;
+}
+
+.slick-arrow{
+    width: 35%;
+    height: 100%;
+    z-index: 800;
+}
+
+.slick-arrow.slick-prev{
+    transform: translate(30px,-50%);
+}
+
+.slick-arrow.slick-next{
+    transform: translate(-30px,-50%);
 }

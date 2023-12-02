@@ -6,8 +6,8 @@
   margin-bottom: 35px;
 
   display: flex;
-  text-justify: distribute-all-lines;
-  text-justify: newspaper;
+  /* text-justify: distribute-all-lines; */
+  /* text-justify: newspaper; */
   align-items: center;
 
   font-family: var(--primary-font);
@@ -48,7 +48,7 @@
     padding-right: var(--primary-margin);
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: var(--primary-font-size-middle);
+    font-size: var(--primary-font-size-medium);
     /* background-color: red; */
   }
 }

@@ -8,9 +8,7 @@
 
 .project-header {
     height: calc(var(--primary-gallery-hight));
-    /* Reduced by 20px */
     width: calc(100% - var(--primary-margin) * 2);
-    /* Reduced by 20px */
     margin: var(--primary-margin);
     border-radius: var(--primary-border-radius);
     background-size: cover;

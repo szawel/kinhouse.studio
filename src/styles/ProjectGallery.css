@@ -6,27 +6,25 @@
     outline: var(--primary-outline);
     overflow: hidden;
     box-sizing: border-box;
+    background-color: var(--primary-bg-color);
 }
 
 @media (max-width: 850px) {
     .projectGalleryContainer {
         width: 100%;
-        
+
     }
 }
 
 
 .projectGalleryImage {
-    height: 700px;
     width: calc(100% - var(--primary-margin) * 2);
     margin: var(--primary-margin);
-    transition: opacity 3.0s ease;
-
     border-radius: var(--primary-border-radius);
-    object-position: center;
 }
 
-.slick-list {
-    background-color: black;
-
+.slick-slider {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }

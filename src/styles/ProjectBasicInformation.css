@@ -2,10 +2,9 @@
     width: 50%;
     padding: var(--primary-text-padding);
     background-color: var(--primary-bg-color);
-
     outline: var(--primary-outline);
-
     box-sizing: border-box;
+    
 }
 
 @media (max-width: 850px) {

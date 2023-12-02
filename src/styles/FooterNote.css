@@ -14,6 +14,14 @@
     box-sizing: border-box;
 }
 
-.logotyp{
+.footer-note.mobile {
+    height: calc(var(--primary-hight) * 3);
+}
+
+.logotyp {
     width: calc(var(--primary-hight) * 2);
+}
+
+.footer-note.mobile .logotyp{
+    width: calc(var(--primary-hight) * 3);
 }

@@ -61,6 +61,7 @@ const MenuBar = () => {
   }, [isLogoAnimated, logoAnimationDuration]);
   
   const toggleMenuList = isOpen ? "menu-list-container open" : "menu-list-container";
+  const toggleMenuBar = isOpen ? "menu-bar open" : "menu-bar";
   const toggleBarA = isOpen ? "bar-a open" : "bar-a";
   const toggleBarB = isOpen ? "bar-b open" : "bar-b";
   const toggleBarC = isOpen ? "bar-c open" : "bar-c";
@@ -79,7 +80,7 @@ const MenuBar = () => {
           </Link>
         </div>
         <div className='gui-button' onClick={toggleOpen}>
-          <div className='menu-bar'>
+          <div className={toggleMenuBar}>
             <div className={toggleBarA}/>
             <div className={toggleBarB}/>
             <div className={toggleBarC}/>

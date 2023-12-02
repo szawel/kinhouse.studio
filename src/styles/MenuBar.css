@@ -23,7 +23,7 @@
     background-color: none;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
     .menu-gui-container {
         background-color: var(--primary-bg-color);
     }
@@ -43,12 +43,11 @@
     transition: transform 0.5s ease-in-out;
     position: relative;
     z-index: 2000;
-    /* border-bottom: var(--primary-line); */
     box-sizing: border-box;
 }
 
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
     .menu-list-container {
         background-color: var(--primary-bg-color);
         height: calc(var(--primary-hight) * 5);
@@ -65,7 +64,7 @@
     transition: transform 0.5s ease-in-out;
     
 }
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
     .menu-list-container.open {
         transform: translateX(0px);
     }
@@ -78,9 +77,9 @@
     cursor: pointer;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
     .gui-logo {
-        margin-left: 0px;
+        margin-left: -8px;
     }
 }
 
@@ -91,9 +90,9 @@
     cursor: pointer;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
     .gui-button {
-        margin-right: -2px;
+        margin-right: -10px;
     }
 }
 
@@ -120,7 +119,7 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
     .list-button {
         width: 100%;
         height: var(--primary-hight);
@@ -148,6 +147,13 @@
     padding-left: 20px;
     padding-right: 20px;
     /* background-color: red; */
+    transition: 0.5s ease-in-out;
+}
+
+.menu-bar.open{
+    
+    transform: rotateY(0deg) rotate(180deg);
+    transition: 0.5s ease-in-out;
 }
 
 .bar-a{
@@ -183,10 +189,10 @@
     height: 4px;
     width: 100%;
     background-color: var(--primary-fg-color);
-    transition: 0.25s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .bar-c.open{
     height: 0px;
-    transition: 0.25s ease-in-out;
+    transition: 0.05s ease-in-out;
 }

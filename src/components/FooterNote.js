@@ -5,11 +5,22 @@ import logoAnimation from '../matz/Logo.Verical.02.json';
 
 const FooterNote = () => {
     const [isLogoAnimated, setIsLogoAnimated] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
 
     const frameRate = logoAnimation.fr;
     const totalFrames = logoAnimation.op - logoAnimation.ip;
     const logoAnimationDuration = (totalFrames / frameRate) * 1000;
   
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const toggleLogoAnimation = () => {
         setIsLogoAnimated(true);
@@ -32,7 +43,7 @@ const FooterNote = () => {
     }, [isLogoAnimated, logoAnimationDuration]);
 
     return (
-        <div className='footer-note'>
+        <div className={`footer-note ${isMobile ? 'mobile' : ''}`}>
             <div
                 onClick={toggleLogoAnimation}
                 onKeyDown={handleKeyDown}

@@ -31,21 +31,33 @@ const ProjectPoster = ({ imageData }) => {
         autoplay: true,
     };
 
+    //     return (
+    //         <div className="projectPosterContainer">
+    //             {isMobile ? (
+    //                 imageData.map((image, index) => (
+    //                     <GatsbyImage key={index} image={getImage(image)} alt={`Poster image ${index + 1}`} className="projectPosterImage" />
+    //                 ))
+    //             ) : (
+    //                 <Slider {...settings}>
+    //                     {imageData.map((image, index) => (
+    //                         <div key={index}>
+    //                             <GatsbyImage image={getImage(image)} alt={`Poster image ${index + 1}`} className="projectPosterImage" />
+    //                         </div>
+    //                     ))}
+    //                 </Slider>
+    //             )}
+    //         </div>
+    //     );
+    // };
     return (
         <div className="projectPosterContainer">
-            {isMobile ? (
-                imageData.map((image, index) => (
-                    <GatsbyImage key={index} image={getImage(image)} alt={`Poster image ${index + 1}`} className="projectPosterImage" />
-                ))
-            ) : (
-                <Slider {...settings}>
-                    {imageData.map((image, index) => (
-                        <div key={index}>
-                            <GatsbyImage image={getImage(image)} alt={`Poster image ${index + 1}`} className="projectPosterImage" />
-                        </div>
-                    ))}
-                </Slider>
-            )}
+            <Slider {...settings}>
+                {imageData.map((image, index) => (
+                    <div key={index}>
+                        <GatsbyImage image={getImage(image)} alt={`Poster image ${index + 1}`} className="projectPosterImage" />
+                    </div>
+                ))}
+            </Slider>
         </div>
     );
 };
