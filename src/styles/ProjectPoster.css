@@ -3,7 +3,9 @@
     margin: 0px;
     padding: 0px;
     width: 30%;
-    outline: var(--primary-outline);
+    /* outline: var(--primary-outline); */
+    border-top: var(--primary-line);
+    border-bottom: var(--primary-line);
     overflow: hidden;
     box-sizing: border-box;
     background-color: var(--primary-bg-color);
@@ -20,6 +22,8 @@
     width: calc(100% - var(--primary-margin) * 2);
     margin: var(--primary-margin);
     border-radius: var(--primary-border-radius);
+    border: var(--primary-line);
+    box-sizing: border-box;
 
 }
 

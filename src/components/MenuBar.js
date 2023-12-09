@@ -68,7 +68,7 @@ const MenuBar = () => {
   
   
   return (
-    <div className='menu-container'>
+    <nav className='menu-container'>
       <div className='menu-gui-container'>
         <div className='gui-logo'>
           <Link to="/" onClick={toggleLogoAnimation} className="menu-logo">
@@ -94,7 +94,7 @@ const MenuBar = () => {
         <div className='list-button' onClick={() => navigateToSection('about us', 0)} >About us</div>
         {/* <div className='list-button' onClick={() => navigateToSection('movies', 0)} >Doc</div> */}
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -56,7 +56,7 @@ const FooterNote = () => {
     }, [isLogoAnimated, logoAnimationDuration]);
 
     return (
-        <div className={`footer-note ${isMobile ? 'mobile' : ''}`}>
+        <footer className={`footer-note ${isMobile ? 'mobile' : ''}`}>
             <div
                 onClick={toggleLogoAnimation}
                 onKeyDown={handleKeyDown}
@@ -71,7 +71,7 @@ const FooterNote = () => {
                     style={{ width: '100%', height: '100%' }}
                 />
             </div>
-        </div>
+        </footer>
     );
 };
 

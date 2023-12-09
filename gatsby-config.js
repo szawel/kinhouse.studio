@@ -27,14 +27,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: "/src/matz"
-        }
-      }
-    },
+    `gatsby-plugin-svgr`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

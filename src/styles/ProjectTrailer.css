@@ -1,38 +1,47 @@
 .project-trailer {
-    width: 50%;
+    all: unset;
+    width: 100%;
     height: auto;
 
     margin: 0px;
     padding: 0px;
 
     /* min-height: calc(70px * 7); */
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: var(--primary-bg-color);
 
     outline: 1px solid #00f;
-    outline-offset: 0px;
-    
+
     display: flex;
     box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 940px) {
     .project-trailer {
+        height: fit-content;
+    }
+}
+
+.iframe-wrapper {
+    width: 50%;
+}
+
+@media (max-width: 940px) {
+    .iframe-wrapper {
         width: 100%;
     }
 }
 
 iframe {
-
+    all: unset;
     background-color: var(--primary-bg-color);
-    width: 100%;
-    height: auto;
-    min-height: calc(70px * 7);
-}
+    width: calc(100% - var(--primary-margin) * 2);
+    margin: var(--primary-margin);
+    border-radius: 30px;
+    border: 1px solid #00f;
+    min-height: calc(550px - var(--primary-margin) * 2);
+    box-shadow: var(--primary-shadow);
 
-@media (max-width: 850px) {
-    iframe {
-        width: 100%;
-        min-height: 200px;
-    }
 }

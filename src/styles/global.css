@@ -7,6 +7,7 @@
   --primary-margin: 30px;
   --primary-line: 1px solid var(--primary-fg-color);
   --primary-outline: 1px solid var(--primary-fg-color);
+  --primary-shadow: rgba(0, 0, 255, 0.2) 0px 0px 35px 35px;
   
   /* Text options */
   --primary-font: "bc-novatica-cyr";
@@ -27,6 +28,9 @@
   --primary-border-radius: 15px;
   
   --primary-text-padding: 15px 0px 20px 30px;
+
+  /* menu veriables */
+  --primary-menu-num: 4;
 }
 
 @media (max-width: 1100px) {
@@ -49,6 +53,7 @@
     radial-gradient(circle, var(--primary-fg-color) 1px, transparent 1px);
   background-position: 0 0, 5px 5px;
   box-sizing: border-box;
+  overflow: hidden;
 
 }
 

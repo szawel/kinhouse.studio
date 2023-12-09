@@ -83,43 +83,44 @@ const IndexPage = () => {
       {/* <Menu /> */}
       <MenuBar />
       <div className="space" id="studio"></div>
-
       <Gallery imagesData={data.strapiMain.IntroGalery} />
+      <section>
+        <div id="movies"></div>
+        <CategoriesCollapsible text="Movies">
+          {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Movie")).map((project, index) => (
+            <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
+              <Project id={project.Year} title={project.Title} categories={project.Genre} />
+            </Link>
+          ))}
+        </CategoriesCollapsible>
 
-      <div id="movies"></div>
-      <CategoriesCollapsible text="Movies">
-        {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Movie")).map((project, index) => (
-          <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
-            <Project id={project.Year} title={project.Title} categories={project.Genre} />
-          </Link>
-        ))}
-      </CategoriesCollapsible>
+        <div id="animation"></div>
+        <CategoriesCollapsible text="Animation">
+          {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Animation")).map((project, index) => (
+            <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
+              <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
+            </Link>
+          ))}
+        </CategoriesCollapsible>
 
-      <div id="animation"></div>
-      <CategoriesCollapsible text="Animation">
-        {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Animation")).map((project, index) => (
-          <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
-            <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
-          </Link>
-        ))}
-      </CategoriesCollapsible>
+        <div id="immersive"></div>
+        <CategoriesCollapsible text="Immersive">
+          {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Immersive")).map((project, index) => (
+            <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
+              <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
+            </Link>
+          ))}
+        </CategoriesCollapsible>
+        <div className="space" />
+      </section>
+      <section>
+        <div id="about us"></div>
+        <Categories text="About us" />
+        <IntroDescription markdownData={introDescriptionMarkdown} />
+        <IntroTeamCollapsible teamData={teamData} />
 
-      <div id="immersive"></div>
-      <CategoriesCollapsible text="Immersive">
-        {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Immersive")).map((project, index) => (
-          <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
-            <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
-          </Link>
-        ))}
-      </CategoriesCollapsible>
-      <div className="space" />
-
-      <div id="about us"></div>
-      <Categories text="About us" />
-      <IntroDescription markdownData={introDescriptionMarkdown} />
-      <IntroTeamCollapsible teamData={teamData} />
-
-      <div className="space" />
+        <div className="space" />
+      </section>
       <FooterNote />
 
     </div>

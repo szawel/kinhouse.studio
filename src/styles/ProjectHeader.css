@@ -7,7 +7,7 @@
 }
 
 .project-header {
-    height: calc(var(--primary-gallery-hight));
+    height: calc(var(--primary-gallery-hight)/2);
     width: calc(100% - var(--primary-margin) * 2);
     margin: var(--primary-margin);
     border-radius: var(--primary-border-radius);

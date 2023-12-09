@@ -1,35 +1,44 @@
 // src/components/ProjectGallery.js
-import React from 'react';
+import React, { useState } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import '../styles/ProjectGallery.css'; // Import the CSS file
+import '../styles/ProjectGallery.css';
+import ArrowRightURL, { ReactComponent as ArrowRight } from '/src/matz/arrow-right.svg';
+import ArrowLeftURL, { ReactComponent as ArrowLeft } from '/src/matz/arrow-left.svg';
+
 
 const ProjectGallery = ({ imageData }) => {
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     if (!imageData || imageData.length === 0) {
         return null; // Do not render if there are no images
     }
 
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % imageData.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + imageData.length) % imageData.length);
     };
 
     return (
         <div className="projectGalleryContainer">
-            <Slider {...settings}>
+            <button onClick={prevSlide} className="slideButton prevButton">
+                <ArrowLeft className="arrow" />
+            </button>
+            <div className="projectGallerySlider">
                 {imageData.map((image, index) => (
-                    <div key={index}>
-                        <GatsbyImage image={getImage(image)} alt={`Gallery image ${index + 1}`} className="projectGalleryImage" />
+                    <div
+                        key={index}
+                        className={`slide ${index === currentSlide ? 'active' : ''}`}
+                    >
+                        <GatsbyImage image={getImage(image)} alt={`Gallery image ${index + 1}`} />
                     </div>
                 ))}
-            </Slider>
+            </div>
+            <button onClick={nextSlide} className="slideButton nextButton">
+                <ArrowRight className="arrow" />
+            </button>
         </div>
     );
 };

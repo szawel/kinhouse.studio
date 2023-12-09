@@ -2,12 +2,13 @@
     width: 50%;
     padding: var(--primary-text-padding);
     background-color: var(--primary-bg-color);
+    line-height: 1.1em;
     outline: var(--primary-outline);
     box-sizing: border-box;
-    
+    word-wrap: break-word;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 940px) {
     .basic-information-wrapper {
         width: 100%;
     }

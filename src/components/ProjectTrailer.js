@@ -12,7 +12,13 @@ const ProjectTrailer = ({ trailer }) => {
 
   // This dangerouslySetInnerHTML is necessary to render the HTML from Strapi
   return (
-    <div className="project-trailer" dangerouslySetInnerHTML={{ __html: trailer }} />
+    <div className="project-trailer">
+      <div className="iframe-wrapper">
+        <div dangerouslySetInnerHTML={{ __html: trailer }}>
+        </div>
+      </div>
+
+    </div>
   );
 };
 

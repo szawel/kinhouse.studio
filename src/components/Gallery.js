@@ -22,7 +22,7 @@ const Gallery = ({ imagesData }) => {
     }, [images.length]);
 
     return (
-        <div className="gallery">
+        <section className="gallery">
             <div className="galleryWrapper">
                 {images.map((image, index) => (
                     <GatsbyImage 
@@ -33,7 +33,7 @@ const Gallery = ({ imagesData }) => {
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -4,7 +4,7 @@ import CloseIcon from '../matz/plus.svg'; // Import your SVG icon
 import '../styles/CategoriesCollapsible.css';
 
 const CategoriesCollapsible = ({ text, children }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const [maxHeight, setMaxHeight] = useState(0);
     const contentRef = useRef(null);
 

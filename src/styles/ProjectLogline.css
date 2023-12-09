@@ -1,0 +1,16 @@
+.logline-wrapper {
+    width: 100%;
+    background-color: var(--primary-bg-color);
+    height: calc(var(--primary-hight) * 2);
+    border-bottom: var(--primary-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+.logline-information p{
+    text-align: center;
+    font-size: var(--primary-font-size-middle);
+}

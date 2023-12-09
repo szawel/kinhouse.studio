@@ -9,6 +9,7 @@ import ProjectHeader from '../components/ProjectHeader'
 import ProjectPoster from '../components/ProjectPoster';
 import ProjectLaurels from '../components/ProjectLaurels';
 import ProjectSynopsis from '../components/ProjectSynopsis';
+import ProjectLogline from '../components/ProjectLogline';
 import ProjectTrailer from "../components/ProjectTrailer";
 
 
@@ -25,6 +26,7 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
     BasicInformation: basicInfo,
     ProductionStructure: productionStructure,
     Synopsis: synopsis,
+    Logline: logline,
     ProjectGallery: galleryImages,
     Poster: posterImages,
     Laurels: laurelsImages,
@@ -39,18 +41,20 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
   return (
     <div>
       <MenuBar />
-
       <ProjectHeader superscription={Superscription} title={Title} subTitle={SubTitle} headerPhoto={HeaderPhoto} />
+      <ProjectLogline logline={logline} />
       <ProjectLaurels imageData={laurels} />
+      <section className="container">
+      </section>
 
-      <div className="container">
+      <section className="container">
         <ProjectBasicInformation basicInfo={basicInfo} />
         <ProjectProductionInformation productionStructure={productionStructure} />
         <ProjectTrailer trailer={trailer} />
         <ProjectSynopsis synopsis={synopsis} />
         <ProjectPoster imageData={poster} />
         <ProjectGallery imageData={images} />
-      </div>
+      </section>
       <div className="space" />
       <FooterNote />
     </div>
@@ -92,6 +96,14 @@ export const query = graphql`
         Synopsis{
           data{
             Synopsis
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Logline{
+          data{
+            Logline
             childMarkdownRemark {
               html
             }
