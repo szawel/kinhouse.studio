@@ -14,6 +14,8 @@ import IntroDescription from "../components/IntroDescription";
 import IntroTeamCollapsible from "../components/IntroTeamCollapsible";
 import FooterNote from "../components/FooterNote";
 
+import Dummy from "../components/Dummy";
+
 import "../styles/global.css";
 
 const IndexPage = () => {
@@ -80,8 +82,9 @@ const IndexPage = () => {
   return (
     <div id="index">
 
+      <Dummy />
       {/* <Menu /> */}
-      <MenuBar />
+      {/* <MenuBar />
       <div className="space" id="studio"></div>
       <Gallery imagesData={data.strapiMain.IntroGalery} />
       <section>
@@ -121,7 +124,7 @@ const IndexPage = () => {
 
         <div className="space" />
       </section>
-      <FooterNote />
+      <FooterNote /> */}
 
     </div>
   );
