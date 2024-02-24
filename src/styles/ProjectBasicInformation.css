@@ -13,3 +13,8 @@
         width: 100%;
     }
 }
+
+.basic-information-wrapper p{
+    /* background-color: red; */
+    font-size: var(--primary-font-size-small);
+}

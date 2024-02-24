@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: var(--primary-line);
 }
 
 @media (max-width: 850px) {
@@ -43,7 +44,7 @@
     text-shadow: 0px 0px 15px black;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .Title {
         font-size: calc(var(--primary-font-size-medium) * 2);
         
@@ -59,7 +60,7 @@
     color: white;
     text-shadow: 0px 0px 15px black;
 }
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .SubTitle {
         font-size: calc(var(--primary-font-size-small) * 2);
         

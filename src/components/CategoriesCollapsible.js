@@ -8,6 +8,7 @@ const CategoriesCollapsible = ({ text, children }) => {
     const [maxHeight, setMaxHeight] = useState(0);
     const contentRef = useRef(null);
 
+    
     const toggleOpen = () => {
         setIsOpen(!isOpen);
         if (contentRef.current) {

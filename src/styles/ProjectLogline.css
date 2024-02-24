@@ -1,7 +1,7 @@
 .logline-wrapper {
     width: 100%;
     background-color: var(--primary-bg-color);
-    height: calc(var(--primary-hight) * 2);
+    height: calc(var(--primary-hight) * 2 + var(--primary-margin)*2);
     border-bottom: var(--primary-line);
     display: flex;
     align-items: center;

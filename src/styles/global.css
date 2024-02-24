@@ -23,7 +23,8 @@
   
   /* Galery */
   /* --primary-gallery-hight: calc(var(--primary-hight)*7); */
-  --primary-gallery-hight: 736px;
+  --primary-gallery-hight: 420px;
+  --primary-gallery-hight: 1260px;
   --primary-gallery-margin: 30px;
   --primary-border-radius: 15px;
   

@@ -1,6 +1,7 @@
 // BasicInformation.js
 import React from 'react';
 
+
 import "../styles/ProjectBasicInformation.css"
 
 const ProjectBasicInformation = ({ basicInfo }) => {
@@ -19,10 +20,10 @@ const ProjectBasicInformation = ({ basicInfo }) => {
   return (
 
     <div className="basic-information-wrapper">
-      <div
-        className="basic-information"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
+        <div
+          className="basic-information"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
     </div>
   );
 };

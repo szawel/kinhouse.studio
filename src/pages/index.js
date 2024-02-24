@@ -3,7 +3,6 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import slugify from "slugify"; // Make sure you have slugify installed
 
-// #modem
 // import Menu from "../components/Menu";
 import MenuBar from "../components/MenuBar";
 import Categories from "../components/Categories";
@@ -82,9 +81,9 @@ const IndexPage = () => {
   return (
     <div id="index">
 
-      <Dummy />
-      {/* <Menu /> */}
-      {/* <MenuBar />
+      {/* <Dummy />*/}
+
+      <MenuBar />
       <div className="space" id="studio"></div>
       <Gallery imagesData={data.strapiMain.IntroGalery} />
       <section>
@@ -122,9 +121,10 @@ const IndexPage = () => {
         <IntroDescription markdownData={introDescriptionMarkdown} />
         <IntroTeamCollapsible teamData={teamData} />
 
+
         <div className="space" />
       </section>
-      <FooterNote /> */}
+      <FooterNote />
 
     </div>
   );
