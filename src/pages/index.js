@@ -13,8 +13,6 @@ import IntroDescription from "../components/IntroDescription";
 import IntroTeamCollapsible from "../components/IntroTeamCollapsible";
 import FooterNote from "../components/FooterNote";
 
-import Dummy from "../components/Dummy";
-
 import "../styles/global.css";
 
 const IndexPage = () => {
