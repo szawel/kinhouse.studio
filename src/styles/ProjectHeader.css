@@ -6,6 +6,7 @@
     
 }
 
+
 .project-header {
     height: calc(var(--primary-gallery-hight)/2);
     width: calc(100% - var(--primary-margin) * 2);
@@ -19,9 +20,10 @@
     border: var(--primary-line);
 }
 
+
 @media (max-width: 850px) {
     .project-header {
-        height: calc(var(--primary-gallery-hight) / 2);
+        height: calc(var(--primary-gallery-hight) / 4);
         
     }
 }
@@ -29,7 +31,7 @@
 
 .header-content {
     text-align: center;
-    color: white;
+    color: var(--primary-fg-color);
     /* Adjust text color as needed */
 }
 
@@ -38,10 +40,13 @@
     margin-bottom: 0;
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-large) * 2);
-    color: white;
+    color: var(--primary-white-color);
     font-weight: 700;
     line-height: 1em;
-    text-shadow: 0px 0px 15px black;
+    text-align: center;
+    text-shadow: 0px 0px 55px black;
+    /* padding: 50px; */
+    
 }
 
 @media (max-width: 900px) {
@@ -57,8 +62,9 @@
     margin-bottom: 0;
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-medium)*2);
-    color: white;
-    text-shadow: 0px 0px 15px black;
+    color: var(--primary-white-color);
+    text-shadow: 0px 0px 55px black;
+    
 }
 @media (max-width: 900px) {
     .SubTitle {
@@ -73,6 +79,7 @@
     margin-bottom: 0;
     font-family: var(--primary-font);
     font-size: calc(var(--primary-font-size-small)*2);
-    color: white;
-    text-shadow: 0px 0px 15px black;
+    color: var(--primary-white-color);
+    text-shadow: 0px 0px 55px black;
+    
 }

@@ -3,7 +3,7 @@
 }
 
 .galleryWrapper {
-    height: calc(var(--primary-gallery-hight)/2);
+    height: calc(var(--primary-gallery-hight)/3);
     width: calc(100% - var(--primary-margin) * 2);
     margin: var(--primary-margin);
     border-radius: var(--primary-border-radius);
@@ -18,7 +18,6 @@
 }
 
 .galleryImage {
-    width: 100%;
     height: 100%;
     position: absolute;
     top: 0;

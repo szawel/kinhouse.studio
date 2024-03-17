@@ -53,7 +53,7 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
         <ProjectTrailer trailer={trailer} />
         <ProjectSynopsis synopsis={synopsis} />
         <ProjectPoster imageData={poster} />
-        <ProjectGallery imageData={images} />
+        {/* <ProjectGallery imageData={images} /> */}
       </section>
       <div className="space" />
       <FooterNote />

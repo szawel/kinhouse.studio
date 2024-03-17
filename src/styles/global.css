@@ -2,6 +2,7 @@
   /* General veriables */
   --primary-bg-color: #000;
   --primary-fg-color: #00F;
+  --primary-white-color: #FFF;
   /* --primary-fg-color: #fff; */
   --primary-hight: 70px;
   --primary-margin: 30px;
@@ -33,6 +34,14 @@
   /* menu veriables */
   --primary-menu-num: 4;
 }
+
+
+body {
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 @media (max-width: 1100px) {
   :root {

@@ -83,7 +83,7 @@ const IndexPage = () => {
 
       <MenuBar />
       <div className="space" id="studio"></div>
-      <Gallery imagesData={data.strapiMain.IntroGalery} />
+      {/* <Gallery imagesData={data.strapiMain.IntroGalery} /> */}
       <section>
         <div id="movies"></div>
         <CategoriesCollapsible text="Movies">
@@ -94,14 +94,20 @@ const IndexPage = () => {
           ))}
         </CategoriesCollapsible>
 
-        <div id="animation"></div>
+        
++        {/* 
++        Filter out projects with "Animation" category and map each project to a link to its project page. 
++        The link includes a slugified version of the project's name, and the Project component is given the project's ID, title, and categories.
++        The functionality of this section is currently disabled, but can be re-enabled by removing the comment markers.
++        */}
+        {/* <div id="animation"></div>
         <CategoriesCollapsible text="Animation">
           {data.allStrapiProject.nodes.filter(project => project.Categories.includes("Animation")).map((project, index) => (
             <Link to={`/project/${slugify(project.Name, { lower: true, strict: true })}`} key={index}>
               <Project key={index} id={project.Year} title={project.Title} categories={project.Genre} />
             </Link>
           ))}
-        </CategoriesCollapsible>
+        </CategoriesCollapsible> */}
 
         <div id="immersive"></div>
         <CategoriesCollapsible text="Immersive">

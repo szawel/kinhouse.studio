@@ -10,6 +10,12 @@
 
 }
 
+.logline-information{
+    padding: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 .logline-information p{
     text-align: center;
     font-size: var(--primary-font-size-middle);

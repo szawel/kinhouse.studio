@@ -44,3 +44,25 @@ pm2 monit
 # To update PM2 to the latest version, you can use
 npm install pm2@latest -g
 ```
+
+## Media
+
+| Nr | Name | Format | Resolution | Type |
+|-|-|-|-|-|
+|1| ProjectHeader | .png | 1920 x 740 px | Single Image |
+|2| Laurels | .png | 1024 x 1024 px | Multiple Images |
+|3| Poster | .png | 1920 x 2778 px | Single Images |
+
+#### Media Description
+
+1. **ProjectHeader** </br>
+ProjectHeader
+Static image without logo, text or similar graphical element. A plain image, such as a photo, graphic, or similar. </br>
+
+2. **Laurels** </br>
+Static images of Laurels, on transparent background, with square aspect ratio. 
+
+2. **Poster** </br>
+Static images, without transparency background.
+
+
