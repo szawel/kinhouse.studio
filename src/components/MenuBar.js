@@ -3,6 +3,7 @@ import { Link, navigate } from 'gatsby';
 import Lottie from 'react-lottie-player';
 import logoAnimation from '../matz/Logotyp.3.json';
 import menuAnimation from '../matz/menu.01.json';
+
 import '../styles/MenuBar.css';
 
 const MenuBar = () => {
@@ -89,7 +90,7 @@ const MenuBar = () => {
       </div>
       <div onClick={toggleOpen} className={toggleMenuList}>
         <div className='list-button' onClick={() => navigateToSection('movies', 0)} >Movies</div>
-        <div className='list-button' onClick={() => navigateToSection('animation', 0)} >Animation</div>
+        {/* <div className='list-button' onClick={() => navigateToSection('animation', 0)} >Animation</div> */}
         <div className='list-button' onClick={() => navigateToSection('immersive', 0)} >Immersive</div>
         <div className='list-button' onClick={() => navigateToSection('about us', 0)} >About us</div>
         {/* <div className='list-button' onClick={() => navigateToSection('movies', 0)} >Doc</div> */}
