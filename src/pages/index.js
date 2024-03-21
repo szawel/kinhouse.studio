@@ -77,6 +77,7 @@ const IndexPage = () => {
 
 
   return (
+    <div className="mainWrapper">
     <div id="index">
 
       {/* <Dummy />*/}
@@ -130,6 +131,7 @@ const IndexPage = () => {
       </section>
       <FooterNote />
 
+    </div>
     </div>
   );
 };

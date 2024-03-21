@@ -39,7 +39,7 @@ export default function ProjectTemplate({ data: { strapiProject } }) {
   const laurels = mapImagesToGatsbyImageData(laurelsImages);
 
   return (
-    <div>
+    <div className="mainWrapper">
       <MenuBar />
       <ProjectHeader superscription={Superscription} title={Title} subTitle={SubTitle} headerPhoto={HeaderPhoto} />
       <ProjectLogline logline={logline} />

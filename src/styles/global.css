@@ -38,8 +38,19 @@
 
 body {
   max-width: 1920px;
-  margin-right: auto;
-  margin-left: auto;
+}
+
+.mainWrapper{
+  max-width: 1920px;
+}
+
+@media (min-width: 1920px) {
+  .mainWrapper{
+    max-width: 1920px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
 }
 
 
